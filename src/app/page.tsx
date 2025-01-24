@@ -1,101 +1,124 @@
 import Image from "next/image";
+import React from "react";
+
+import ProfilePicture from "../../public/images/profile1cropped.png";
+import ProjectCarousel from "components/carousel";
+import ContactMeForm from "components/contactMeForm";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col ">
+      <div className=" flex flex-col  xl:flex-row justify-between  ">
+        <div className="w-auto flex flex-1 flex-col font-serif text-start mt-10 xl:mt-0  ">
+          {/*welcome message*/}
+          <div className="xl:w-2/3 xl:m-auto  ">
+            <p className="text-xl ml-4 text-start xl:ml-6 xl:text-lg mb-4 text-red-700 font-bold">
+              - I am
+            </p>
+            <p className="text-5xl xl:text-6xl  m-4 font-serif">
+              Riccardo Barone
+            </p>
+            <p className="text-lg m-4 font-serif ">
+              Computer Science student with a passion for software engineering
+              and cybersecurity, dedicated to building innovative and secure
+              solutions
+            </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {/*dowload resume button on desktop*/}
+            <button
+              type="button"
+              className="flex flew-row hidden mt-6 mx-4 text-xl bg-slate-500 p-2 rounded-xl font-mono 2xl:flex"
+            >
+              <i className=" fa-solid fa-download mx-2"></i> Download Resume
+            </button>
+          </div>
+        </div>
+
+        {/*profile picture*/}
+        <div className=" flex-1 xl:mr-20 2xl:mr-40">
+          <Image
+            src={ProfilePicture}
+            alt="Profile Picture"
+            className="  mx-auto 2xl:w-[600px] 2xl:h-[800px] "
+          />
+          {/*dowload resume button on mobile*/}
+          <button
+            type="button"
+            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono 2xl:hidden"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
+            <i className=" fa-solid fa-download mx-2"></i> Download Resume
+          </button>
+        </div>
+
+        {/*links on desktop (on mobile are within header*/}
+        <div className="  flex flex-col justify-center items-center text-3xl hidden 2xl:flex flex-grow-0 w-auto ">
+          <a className="fa-solid fa-envelope my-4 mr-6 2xl:my-8 2xl:mr-12"></a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="fa-brands fa-instagram my-4 mr-6 2xl:my-8 2xl:mr-12"
+            href="https://www.instagram.com/_.riccardobarone._/"
+          ></a>
+          <a
+            className="fa-brands fa-linkedin my-4 mr-6 2xl:my-8 2xl:mr-12"
+            href="https://www.linkedin.com/in/riccardo-barone/"
+          ></a>
+          <a
+            className="fa-brands fa-github my-4 mr-6 2xl:my-8 2xl:mr-12"
+            href="https://github.com/Riccardo105"
+          ></a>
+        </div>
+      </div>
+
+      <div className="flex flex-col mx-auto w-5/6 2xl:flex-row 2xl:mt-4   ">
+        {/*About me preview*/}
+        <div className="flex flex-col  w-5/6 text-white 2xl:flex-1 2xl:mr-3 ">
+          <h1 className="text-start  text-4xl mt-10 text-white border-b-2 border-white">
+            About me
+          </h1>
+          <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
+            Hi, I’m Riccardo Barone, a 23-year-old Italian currently living in
+            Winchester, UK. I began my career in hospitality, training as a chef
+            in Italy before moving to the UK to gain hands-on experience in the
+            industry. After several years in hospitality, I decided to pursue a
+            new challenge and follow my passion for technology. I’m now in my
+            second year of a Computer Science undergraduate degree, where I’m
+            exploring how technology can innovate and transform industries.
+          </p>
+          <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
+            Professionally, I’m driven by the desire to create impactful
+            solutions and potentially build something of my own. I’m
+            particularly interested in leveraging technology to solve real-world
+            problems and push boundaries in the tech space.
+          </p>
+          <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
+            Outside of work and studies, I’m passionate about personal
+            development and enjoy activities that challenge me creatively and
+            physically. I love reading, playing video games, basketball, and
+            building custom PCs, which combines my love for technology and
+            hands-on creativity...
+          </p>
+
+          <a
+            className="justify-center text-center mt-6 w-56 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono"
+            href="/about"
           >
-            Read our docs
+            Find out more
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className=" flex flex-col 2xl:ml-3 2xl:flex-1 w-5/6">
+          <h1 className="text-start  text-4xl mt-10 text-white border-b-2 border-white">
+            Contact me
+          </h1>
+          <ContactMeForm />
+        </div>
+      </div>
+
+      {/*projects carousel*/}
+      <div className=" slider-wrapper w-5/6 justify-center mx-auto ">
+        <p className="text-start pl-2 text-4xl mt-10 text-white border-b-2 border-white">
+          My Projects
+        </p>
+        <ProjectCarousel />
+      </div>
     </div>
   );
 }

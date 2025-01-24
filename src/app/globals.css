@@ -19,3 +19,25 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+  .slick-prev:before {
+    color: white !important;  /* Change the color of the previous arrow */
+  }
+
+  .slick-next:before {
+    color: white !important;
+      /* Change the color of the next arrow */
+  }
+
+  @media (max-width: 700px) {
+    .slick-prev:before,
+    .slick-next:before {
+      display: none !important; /* Hide the arrows below 700px */
+    }
+  }
+
+ .slick-dots button:before{
+  color: white !important; /* Change the color of the dots */
+  
+ }
