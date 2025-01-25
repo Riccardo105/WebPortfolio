@@ -6,6 +6,53 @@ import { useState, useRef } from "react";
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 ></link>;
 
+function MenuItems({ styling }: { styling: string }) {
+  return (
+    <ul className={styling}>
+      <li
+        className="py-3 xl:px-6 "
+        onClick={() => {
+          window.location.href = `/`;
+        }}
+      >
+        Home
+      </li>
+      <li
+        className="py-3 xl:px-6"
+        onClick={() => {
+          window.location.href = `/about`;
+        }}
+      >
+        About
+      </li>
+      <li
+        className="py-3 xl:px-6"
+        onClick={() => {
+          window.location.href = `/projects`;
+        }}
+      >
+        My Projects
+      </li>
+      <li
+        className="py-3 xl:px-6"
+        onClick={() => {
+          window.location.href = `/contact`;
+        }}
+      >
+        Contact
+      </li>
+      <li
+        className="py-3 xl:px-6"
+        onClick={() => {
+          window.location.href = `/services-`;
+        }}
+      >
+        Services
+      </li>
+    </ul>
+  );
+}
+
 export default function Header() {
   const [isMenuOpen, SetMenuState] = useState(false);
   const MenuRef = useRef<HTMLDivElement | null>(null);
@@ -30,7 +77,7 @@ export default function Header() {
   }
 
   return (
-    <div className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6">
+    <header className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6">
       {/* burger menu icon, disappear on deskop as entries are shown in main header */}
       <div className="items-start xl:hidden">
         <i
@@ -40,13 +87,7 @@ export default function Header() {
       </div>
       {/* menu entries on desktop within main header */}
       <div>
-        <ul className=" flex-row text-2xl hidden  xl:flex font-sans">
-          <li className="px-6 cursor-pointer">Home</li>
-          <li className="px-6 cursor-pointer">About </li>
-          <li className="px-6 cursor-pointer">My Projects</li>
-          <li className="px-6 cursor-pointer">Contact </li>
-          <li className="px-6 cursor-pointer">Services </li>
-        </ul>
+        <MenuItems styling=" flex-row text-2xl hidden  xl:flex font-sans cursor-pointer" />
       </div>
       <div className=" items-end text-3xl xl:pl-2 xl:hidden ">
         <a className="fa-solid fa-envelope px-2 xl:px-4"></a>
@@ -69,15 +110,8 @@ export default function Header() {
           ref={MenuRef}
           className="BurgerMenu fixed top-0 left-0 w-full h-screen bg-black bg-opacity-100 flex p-6 flex-col z-50 motion-translate-y-in-100 motion-duration-1000"
         >
-          <div className="flex flex-row justify-between w-full overflow-hidden">
-            <ul className="mt-14 ml-4 text-3xl">
-              <li className="py-3">Home</li>
-              <li className="py-3">About </li>
-              <li className="py-3">My Projects</li>
-              <li className="py-3">Contact </li>
-              <li className="py-3">Services </li>
-            </ul>
-
+          <div className="flex flex-row justify-between w-full overflow-hidden cursor-pointer">
+            <MenuItems styling="mt-14 ml-4 text-3xl" />
             <i
               className="fa-solid fa-arrow-left text-2xl mt-10 "
               onClick={() => {
@@ -87,7 +121,7 @@ export default function Header() {
             ></i>
           </div>
           {/* social links within menu window */}
-          <div className=" items-start text-3xl ml-4 mt-6 ">
+          <div className=" items-start text-3xl ml-4 mt-6 cursor-pointer ">
             <a className="fa-solid fa-envelope pr-2"></a>
             <a
               className="fa-brands fa-instagram px-2"
@@ -104,6 +138,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </div>
+    </header>
   );
 }

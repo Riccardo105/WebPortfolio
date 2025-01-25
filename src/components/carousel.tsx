@@ -9,15 +9,14 @@ import { StaticImageData } from "next/image";
 export interface CarouselItem {
   id: number;
   title: string;
-  image: StaticImageData
+  image: StaticImageData;
 }
 
-interface CarouselProps { 
-  data: CarouselItem[]
+interface CarouselProps {
+  data: CarouselItem[];
 }
 
-
-export default function Carousel({data}: CarouselProps) {
+export default function Carousel({ data }: CarouselProps) {
   const settings = {
     dots: true,
     infinite: true,

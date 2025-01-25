@@ -8,9 +8,8 @@ import CraneAI from "../../public/images/CraneAI.jpg";
 import NetworkSecurity from "../../public/images/NewtworkSecurity.webp";
 
 import ProjectCarousel from "components/carousel";
-import { CarouselItem } from 'components/carousel';
+import { CarouselItem } from "components/carousel";
 import ContactMeForm from "components/contactMeForm";
-
 
 // data for projects carousel
 
@@ -23,7 +22,7 @@ const Projects: CarouselItem[] = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col flex-grow ">
       <div className=" flex flex-col  xl:flex-row justify-between  ">
         <div className="w-auto flex flex-1 flex-col font-serif text-start mt-10 xl:mt-0  ">
           {/*welcome message*/}
@@ -92,27 +91,18 @@ export default function Home() {
           </h1>
           <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
             Hi, I’m Riccardo Barone, a 23-year-old Italian currently living in
-            Winchester, UK. I began my career in hospitality, training as a chef
-            in Italy before moving to the UK to gain hands-on experience in the
-            industry. After several years in hospitality, I decided to pursue a
-            new challenge and follow my passion for technology. I’m now in my
-            second year of a Computer Science undergraduate degree, where I’m
-            exploring how technology can innovate and transform industries.
+            Winchester, UK. I began my career as a chef in Italy before moving
+            to the UK to gain hands-on experience in hospitality. After several
+            years in the industry, I decided to pursue my passion for technology
+            and am now in my second year of a Computer Science degree.
           </p>
           <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
             Professionally, I’m driven by the desire to create impactful
-            solutions and potentially build something of my own. I’m
-            particularly interested in leveraging technology to solve real-world
-            problems and push boundaries in the tech space.
+            solutions and explore how technology can innovate and transform
+            industries. Outside of work and studies, I enjoy reading, playing
+            video games, basketball, and building custom PCs—activities that
+            challenge me creatively and physically.
           </p>
-          <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-            Outside of work and studies, I’m passionate about personal
-            development and enjoy activities that challenge me creatively and
-            physically. I love reading, playing video games, basketball, and
-            building custom PCs, which combines my love for technology and
-            hands-on creativity...
-          </p>
-
           <a
             className="justify-center text-center mt-6 w-56 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono"
             href="/about"
