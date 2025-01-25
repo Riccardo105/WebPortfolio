@@ -1,9 +1,25 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 import ProfilePicture from "../../public/images/profile1cropped.png";
+import Basketball from "../../public/images/Basketball.jpg";
+import GiftWrapping from "../../public/images/GiftWrapping.jpeg";
+import CraneAI from "../../public/images/CraneAI.jpg";
+import NetworkSecurity from "../../public/images/NewtworkSecurity.webp";
+
 import ProjectCarousel from "components/carousel";
+import { CarouselItem } from 'components/carousel';
 import ContactMeForm from "components/contactMeForm";
+
+
+// data for projects carousel
+
+const Projects: CarouselItem[] = [
+  { id: 1, title: "BasketballLearningPlatform", image: Basketball },
+  { id: 2, title: "Gift Wrapping Service", image: GiftWrapping },
+  { id: 3, title: "Crane AI", image: CraneAI },
+  { id: 4, title: "Network Security", image: NetworkSecurity },
+];
 
 export default function Home() {
   return (
@@ -27,7 +43,7 @@ export default function Home() {
             {/*dowload resume button on desktop*/}
             <button
               type="button"
-              className="flex flew-row hidden mt-6 mx-4 text-xl bg-slate-500 p-2 rounded-xl font-mono 2xl:flex"
+              className="flex flew-row hidden mt-6 mx-4 text-xl bg-slate-500 p-2 rounded-xl font-mono xl:flex"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
             </button>
@@ -44,14 +60,14 @@ export default function Home() {
           {/*dowload resume button on mobile*/}
           <button
             type="button"
-            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono 2xl:hidden"
+            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono xl:hidden"
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
           </button>
         </div>
 
         {/*links on desktop (on mobile are within header*/}
-        <div className="  flex flex-col justify-center items-center text-3xl hidden 2xl:flex flex-grow-0 w-auto ">
+        <div className="  flex flex-col justify-center items-center text-3xl hidden xl:flex flex-grow-0 w-auto ">
           <a className="fa-solid fa-envelope my-4 mr-6 2xl:my-8 2xl:mr-12"></a>
           <a
             className="fa-brands fa-instagram my-4 mr-6 2xl:my-8 2xl:mr-12"
@@ -70,7 +86,7 @@ export default function Home() {
 
       <div className="flex flex-col mx-auto w-5/6 2xl:flex-row 2xl:mt-4   ">
         {/*About me preview*/}
-        <div className="flex flex-col  w-5/6 text-white 2xl:flex-1 2xl:mr-3 ">
+        <div className="flex flex-col text-white p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3  ">
           <h1 className="text-start  text-4xl mt-10 text-white border-b-2 border-white">
             About me
           </h1>
@@ -104,7 +120,7 @@ export default function Home() {
             Find out more
           </a>
         </div>
-        <div className=" flex flex-col 2xl:ml-3 2xl:flex-1 w-5/6">
+        <div className=" flex flex-col 2xl:ml-3 2xl:flex-1 2xl:w-5/6">
           <h1 className="text-start  text-4xl mt-10 text-white border-b-2 border-white">
             Contact me
           </h1>
@@ -117,7 +133,7 @@ export default function Home() {
         <p className="text-start pl-2 text-4xl mt-10 text-white border-b-2 border-white">
           My Projects
         </p>
-        <ProjectCarousel />
+        <ProjectCarousel data={Projects} />
       </div>
     </div>
   );

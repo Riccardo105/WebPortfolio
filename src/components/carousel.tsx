@@ -4,19 +4,20 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../app/globals.css";
-import Basketball from "../../public/images/Basketball.jpg";
-import GiftWrapping from "../../public/images/GiftWrapping.jpeg";
-import CraneAI from "../../public/images/CraneAI.jpg";
-import NetworkSecurity from "../../public/images/NewtworkSecurity.webp";
+import { StaticImageData } from "next/image";
 
-const projects = [
-  { id: "01", title: "BasketballLearningPlatform", image: Basketball },
-  { id: "02", title: "Gift Wrapping Service", image: GiftWrapping },
-  { id: "03", title: "Crane AI", image: CraneAI },
-  { id: "04", title: "Network Security", image: NetworkSecurity },
-];
+export interface CarouselItem {
+  id: number;
+  title: string;
+  image: StaticImageData
+}
 
-export default function ProjectCarousel() {
+interface CarouselProps { 
+  data: CarouselItem[]
+}
+
+
+export default function Carousel({data}: CarouselProps) {
   const settings = {
     dots: true,
     infinite: true,
@@ -25,10 +26,10 @@ export default function ProjectCarousel() {
     slidesToScroll: 3,
     initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -50,22 +51,22 @@ export default function ProjectCarousel() {
   return (
     <div className=" slider-container my-10 ">
       <Slider {...settings}>
-        {projects.map((project) => (
+        {data.map((data) => (
           <button
-            key={project.id}
+            key={data.id}
             className="!flex !justify-center !items-center !h-64 "
             onClick={() => {
-              window.location.href = `/projects/${project.title}`;
+              window.location.href = `/projects/${data.title}`;
             }}
           >
             <div className="!w-full !max-w-sm !p-4 !bg-white !rounded-lg !shadow-md">
               <img
-                src={project.image.src}
-                alt={project.title}
+                src={data.image.src}
+                alt={data.title}
                 className="!w-full !h-48 !object-cover !rounded-t-lg"
               />
               <h3 className="!mt-2 !text-center !text-lg !font-semibold text-black">
-                {project.title}
+                {data.title}
               </h3>
             </div>
           </button>

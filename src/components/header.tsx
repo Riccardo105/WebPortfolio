@@ -30,17 +30,17 @@ export default function Header() {
   }
 
   return (
-    <div className="pt-4 px-4 pb-1 flex justify-between 2xl:justify-end 2xl:w-5/6">
+    <div className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6">
       {/* burger menu icon, disappear on deskop as entries are shown in main header */}
-      <div className="items-start 2xl:hidden ">
+      <div className="items-start xl:hidden">
         <i
-          className="fa-solid fa-bars text-3xl 2xl:hidden "
+          className="fa-solid fa-bars text-3xl xl:hidden"
           onClick={HandleMenuState}
         ></i>
       </div>
       {/* menu entries on desktop within main header */}
       <div>
-        <ul className=" flex flex-row text-2xl hidden 2xl:flex font-sans">
+        <ul className=" flex-row text-2xl hidden  xl:flex font-sans">
           <li className="px-6 cursor-pointer">Home</li>
           <li className="px-6 cursor-pointer">About </li>
           <li className="px-6 cursor-pointer">My Projects</li>
@@ -48,18 +48,18 @@ export default function Header() {
           <li className="px-6 cursor-pointer">Services </li>
         </ul>
       </div>
-      <div className=" items-end text-3xl xl:pl-2 2xl:hidden ">
-        <a className="fa-solid fa-envelope px-2 2xl:px-4"></a>
+      <div className=" items-end text-3xl xl:pl-2 xl:hidden ">
+        <a className="fa-solid fa-envelope px-2 xl:px-4"></a>
         <a
-          className="fa-brands fa-instagram px-2 2xl:px-4"
+          className="fa-brands fa-instagram px-2 xl:px-4"
           href="https://www.instagram.com/_.riccardobarone._/"
         ></a>
         <a
-          className="fa-brands fa-linkedin px-2 2xl:px-4"
+          className="fa-brands fa-linkedin px-2 xl:px-4"
           href="https://www.linkedin.com/in/riccardo-barone/"
         ></a>
         <a
-          className="fa-brands fa-github 2xl:px-4"
+          className="fa-brands fa-github xl:px-4"
           href="https://github.com/Riccardo105"
         ></a>
       </div>
