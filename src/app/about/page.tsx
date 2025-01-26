@@ -6,17 +6,19 @@ export default function Page() {
   return (
     <div className="flex flex-col  w-full items-center ">
       <div className="flex flex-col mx-auto text-white p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
-        <h1 className="text-center  text-4xl my-10 text-white">About me</h1>
-        <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between ">
+        <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between xl:mt-20 ">
           <Image
             src={AboutMe}
             alt="AboutMe Picture"
-            className=" max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden"
+            className=" max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden flex-1"
           ></Image>
-          <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12">
+          <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12 flex-1">
+            <h1 className="text-start w-full mx-auto mt-10 text-4xl  text-white border-b-2 border-white ">
+              Who am I?
+            </h1>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
               Hi, I’m
-              <span className="text-red-700 font-bold text-2xl">
+              <span className="text-red-700 font-bold text-2xl ml-1">
                 Riccardo Barone
               </span>
               , and if you’ve made it here, you already know the basics—I’m a
@@ -78,44 +80,68 @@ export default function Page() {
           </h2>
           <ul className="mx-auto lg:mx-10 font-serif my-2">
             <li className="my-2">
-              <span className="font-bold text-red-700 text-lg">
-                - Software Design & Development
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                Software Design & Development
               </span>
               : Proficient in Python, with experience in software development
               lifecycles, UML diagrams, and user-centered design.
             </li>
             <li className="my-2">
-              Web Development: Skilled in full-stack development and progressive
-              web apps (PWA). Built projects using Node.js with JavaScript and
-              Next.js with React + TypeScript.
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                Web Development
+              </span>
+              : Skilled in full-stack development and progressive web apps
+              (PWA). Built projects using Node.js with JavaScript and Next.js
+              with React + TypeScript.
             </li>
             <li className="my-2">
-              Database Management: Experience with relational databases, SQL,
-              normalization, and data integrity. Worked with MongoDB (NoSQL) for
-              web development projects.
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                Database Management
+              </span>
+              : Experience with relational databases, SQL, normalization, and
+              data integrity. Worked with MongoDB (NoSQL) for web development
+              projects.
             </li>
             <li className="my-2">
-              Cybersecurity: Understanding of CIA triad, cryptographic tools,
-              risk assessment, and security policies.
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                Cybersecurity
+              </span>
+              : Understanding of CIA triad, cryptographic tools, risk
+              assessment, and security policies.
             </li>
             <li className="my-2">
-              Network Security (Favorite Area): Applied knowledge in Packet
-              Tracer to secure various network topologies. Configured device
-              security, server-based AAA, and failover to local authentication.
-              Implemented Access Control Lists (ACLs), port security, L2 VLAN
-              security, and site-to-site VPNs. Set up local SPAN and sniffer for
-              network monitoring.
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                Network Security
+              </span>
+              : Applied knowledge in Packet Tracer to secure various network
+              topologies. Configured device security, server-based AAA, and
+              failover to local authentication. Implemented Access Control
+              Lists, port security, L2 VLAN security, and site-to-site VPNs. Set
+              up local SPAN and sniffer for network monitoring.
             </li>
             <li className="my-2">
-              Data Structures & Operating Systems: Strong grasp of data
-              structures, algorithms, and binary algebra. Knowledge of operating
-              systems, including processes, threads, and memory management.
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                Data Structures & Operating Systems
+              </span>
+              : Strong grasp of data structures, algorithms, and binary algebra.
+              Knowledge of operating systems, including processes, threads, and
+              memory management.
             </li>
             <li className="my-2">
-              AI & Machine Learning: Coded a simple AI agent in Python using the
-              A* algorithm. Trained a machine learning model using logistic
-              regression. Familiar with intelligent agents, search algorithms,
-              and supervised learning.
+              -
+              <span className="font-bold text-red-700 text-lg ml-1">
+                AI & Machine Learning
+              </span>
+              : Coded a simple AI agent in Python using the A* algorithm.
+              Trained a machine learning model using logistic regression.
+              Familiar with intelligent agents, search algorithms, and
+              supervised learning.
             </li>
           </ul>
         </div>

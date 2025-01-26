@@ -61,7 +61,6 @@ export default function Home() {
           <button
             type="button"
             className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono xl:hidden"
-            
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
           </button>
