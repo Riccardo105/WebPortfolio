@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
+import { Suspense } from "react";
 
 import ProfilePicture from "../../public/images/profile1cropped.png";
 import Basketball from "../../public/images/Basketball.jpg";
@@ -60,6 +61,7 @@ export default function Home() {
           <button
             type="button"
             className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono xl:hidden"
+            
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
           </button>
@@ -123,7 +125,9 @@ export default function Home() {
         <p className="text-start pl-2 text-4xl mt-10 text-white border-b-2 border-white">
           My Projects
         </p>
-        <ProjectCarousel data={Projects} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProjectCarousel data={Projects} />
+        </Suspense>
       </div>
     </div>
   );

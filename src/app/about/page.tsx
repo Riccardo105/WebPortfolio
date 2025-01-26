@@ -15,7 +15,7 @@ export default function Page() {
           ></Image>
           <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12">
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-              Hi, I’m{" "}
+              Hi, I’m
               <span className="text-red-700 font-bold text-2xl">
                 Riccardo Barone
               </span>
@@ -68,10 +68,56 @@ export default function Page() {
           ></Image>
         </div>
 
-        <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12  ">
+        <div className="flex flex-col justify-center mx-4  lg:justify-start xl:w-11/12  ">
           <h1 className="text-start w-full text-4xl mt-10 text-white border-b-2 border-white xl:ml-10">
             Skills & Expertise
           </h1>
+          <h2 className="mt-4 my-2 text-lg mx-auto text-center lg:text-start font-serif lg:ml-10">
+            Through my academic journey, I’ve developed a diverse skill set
+            across various technical domains:
+          </h2>
+          <ul className="mx-auto lg:mx-10 font-serif my-2">
+            <li className="my-2">
+              <span className="font-bold text-red-700 text-lg">
+                - Software Design & Development
+              </span>
+              : Proficient in Python, with experience in software development
+              lifecycles, UML diagrams, and user-centered design.
+            </li>
+            <li className="my-2">
+              Web Development: Skilled in full-stack development and progressive
+              web apps (PWA). Built projects using Node.js with JavaScript and
+              Next.js with React + TypeScript.
+            </li>
+            <li className="my-2">
+              Database Management: Experience with relational databases, SQL,
+              normalization, and data integrity. Worked with MongoDB (NoSQL) for
+              web development projects.
+            </li>
+            <li className="my-2">
+              Cybersecurity: Understanding of CIA triad, cryptographic tools,
+              risk assessment, and security policies.
+            </li>
+            <li className="my-2">
+              Network Security (Favorite Area): Applied knowledge in Packet
+              Tracer to secure various network topologies. Configured device
+              security, server-based AAA, and failover to local authentication.
+              Implemented Access Control Lists (ACLs), port security, L2 VLAN
+              security, and site-to-site VPNs. Set up local SPAN and sniffer for
+              network monitoring.
+            </li>
+            <li className="my-2">
+              Data Structures & Operating Systems: Strong grasp of data
+              structures, algorithms, and binary algebra. Knowledge of operating
+              systems, including processes, threads, and memory management.
+            </li>
+            <li className="my-2">
+              AI & Machine Learning: Coded a simple AI agent in Python using the
+              A* algorithm. Trained a machine learning model using logistic
+              regression. Familiar with intelligent agents, search algorithms,
+              and supervised learning.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
