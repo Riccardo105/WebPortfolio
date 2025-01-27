@@ -23,7 +23,7 @@ export default function ContactMeForm() {
         ></textarea>
         <button
           type="submit"
-          className=" w-full h-12 p-2 my-2 bg-slate-500 text-white rounded-lg"
+          className=" w-full h-12 p-2 my-2 bg-white border-black border-2 rounded-lg"
         >
           Submit
         </button>

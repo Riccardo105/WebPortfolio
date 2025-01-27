@@ -22,11 +22,11 @@ body {
 
 
   .slick-prev:before {
-    color: white !important;  /* Change the color of the previous arrow */
+    color: black !important;  /* Change the color of the previous arrow */
   }
 
   .slick-next:before {
-    color: white !important;
+    color: black !important;
       /* Change the color of the next arrow */
   }
 
@@ -38,6 +38,6 @@ body {
   }
 
  .slick-dots button:before{
-  color: white !important; /* Change the color of the dots */
+  color: black !important; /* Change the color of the dots */
   
  }

@@ -2,11 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-row items-start  bg-black text-white">
-      <p className="p-2">
-        {" "}
-        All rights reserved {"\u00A9"} 2025, Riccardo Barone
-      </p>
+    <footer className="flex flex-row items-start">
+      <p className="p-2">All rights reserved {"\u00A9"} 2025 Riccardo Barone</p>
 
       <div className="flex flex-row p-2 ml-4">
         <a className="fa-solid fa-envelope px-2 xl:px-4"></a>

@@ -34,7 +34,7 @@ export default function Home() {
             <p className="text-5xl xl:text-6xl  m-4 font-serif">
               Riccardo Barone
             </p>
-            <p className="text-lg m-4 font-serif ">
+            <p className="text-lg m-4 font-serif">
               Computer Science student with a passion for software engineering
               and cybersecurity, dedicated to building innovative and secure
               solutions
@@ -43,7 +43,7 @@ export default function Home() {
             {/*dowload resume button on desktop*/}
             <button
               type="button"
-              className="flex flew-row hidden mt-6 mx-4 text-xl  p-2 rounded-xl font-serif xl:flex border-2 border-black"
+              className="flex flew-row hidden mt-6 mx-4 text-xl  p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
             </button>
@@ -60,7 +60,7 @@ export default function Home() {
           {/*dowload resume button on mobile*/}
           <button
             type="button"
-            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl p-2 rounded-xl font-mono xl:hidden border-1 border-black"
+            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl p-2 rounded-xl font-serif xl:hidden  bg-white border-2 border-black"
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
           </button>
@@ -105,7 +105,7 @@ export default function Home() {
             challenge me creatively and physically.
           </p>
           <a
-            className="justify-center text-center mt-6 w-56 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono"
+            className="justify-center text-center mt-6 w-56 mx-auto text-xl bg-white border-black border-2 p-2 rounded-xl font-serif"
             href="/about"
           >
             Find out more
@@ -121,7 +121,7 @@ export default function Home() {
 
       {/*projects carousel*/}
       <div className=" slider-wrapper w-5/6 justify-center mx-auto ">
-        <p className="text-start pl-2 text-4xl mt-10 text-white border-b-2 border-white">
+        <p className="text-start pl-2 text-4xl mt-10 border-b-2 border-black">
           My Projects
         </p>
         <Suspense fallback={<div>Loading...</div>}>

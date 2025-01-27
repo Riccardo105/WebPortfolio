@@ -40,7 +40,7 @@ export default function Page() {
             alt="AboutMe Picture"
             className=" max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden flex-1"
           ></Image>
-          <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12 flex-1">
+          <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12 ">
             <h1 className="text-start w-full mx-auto mt-10 text-4xl  border-b-2 border-black ">
               Who am I?
             </h1>
@@ -56,12 +56,15 @@ export default function Page() {
             </p>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
               My journey from chef to computer science student has been anything
-              but conventional. Working in hospitality taught me discipline,
-              creativity, and the importance of adaptability—skills that have
-              proven invaluable as I navigate the world of tech. Now in my
-              second year of a Computer Science degree, I’m fully immersed in
-              exploring how technology can solve real-world problems and push
-              boundaries in innovation.
+              but conventional. Starting as a commis chef and progressing to
+              junior sous chef, I developed skills in discipline, creativity,
+              adaptability, leadership, and problem-solving. These qualities,
+              along with my current experience as a part-time chef at a nursing
+              home, continue to shape my approach to technology. Now in my
+              second year of a Computer Science degree, I’m focused on
+              leveraging technology to solve real-world problems and drive
+              innovation, combining my diverse experiences to push boundaries in
+              new ways.
             </p>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
               Beyond my professional aspirations, I’m a firm believer in the
@@ -76,8 +79,8 @@ export default function Page() {
             </p>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
               One of the most transformative experiences of my life was
-              traveling to Bali with Think Pacific (as seen in the photo).
-              Volunteering there allowed me to immerse myself in a new culture,
+              volounterring in Bali with Think Pacific (as seen in the photo).
+              The time there allowed me to immerse myself in a new culture,
               contribute to meaningful projects, and grow as an individual. It
               reinforced my belief in the importance of adaptability, cultural
               understanding, and embracing new perspectives—values I carry with
@@ -98,7 +101,7 @@ export default function Page() {
           ></Image>
         </div>
 
-        <div className="flex flex-col justify-center mx-4  lg:justify-start xl:w-11/12  ">
+        <div className="flex flex-col justify-center mx-4 mb-20 lg:justify-start xl:w-11/12  ">
           <h1 className="text-start w-full text-4xl mt-10  border-b-2 border-black xl:ml-10">
             Skills & Expertise
           </h1>

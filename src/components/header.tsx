@@ -108,7 +108,7 @@ export default function Header() {
       {isMenuOpen && (
         <div
           ref={MenuRef}
-          className="BurgerMenu fixed top-0 left-0 w-full h-screen bg-black bg-opacity-100 flex p-6 flex-col z-50 motion-translate-y-in-100 motion-duration-1000"
+          className="BurgerMenu fixed top-0 left-0 w-full h-screen bg-custom-pearl bg-opacity-100 flex p-6 flex-col z-50 motion-translate-y-in-100 motion-duration-1000"
         >
           <div className="flex flex-row justify-between w-full overflow-hidden cursor-pointer">
             <MenuItems styling="mt-14 ml-4 text-3xl" />
