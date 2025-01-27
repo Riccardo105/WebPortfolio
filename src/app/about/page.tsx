@@ -1,8 +1,36 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import AboutMe from "../../../public/images/aboutMe.jpg";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+
+const preprocessMarkdown = (markdown: string): string => {
+  return markdown.replace(
+    /- \*\*(.*?)\*\* :/g,
+    (match: string, p1: string): string => {
+      // Only wrap the header part in a span with custom styles, leaving the rest as it is
+      return `- <span className="text-red-700 font-bold text-xl ml-1">${p1}</span> :`;
+    }
+  );
+};
+
+const markdownContent = `
+- **Software Design & Development** : Proficient in **Python**, with experience in software development lifecycles, **UML diagrams**, and user-centered design.
+- **Web Development** : Skilled in **full-stack development** and **progressive web apps** (PWA). Built projects using **Node.js** with **JavaScript** and **Next.js** with **React** + **TypeScript**.
+- **Database Management** : Experience with **relational databases**, **SQL**, normalization, and data integrity. Worked with **MongoDB** (NoSQL) for web development projects.
+- **Cybersecurity** : Understanding of **CIA triad**, **cryptographic tools**, **risk assessment**, and **security policies**.
+- **Network Security** : Applied knowledge in **Packet Tracer** to secure various network topologies. Configured device security, **server-based AAA**. Implemented **Access Control List**, **port security**, **L2 VLAN security**, and **site-to-site VPNs**. Set up local SPAN and sniffer for network monitoring.
+- **Data Structures & Operating Systems** : Strong grasp of **data structures**, **algorithms**, and **binary algebra**. Knowledge of **operating systems**, including **processes**, **threads**, and **memory management**.
+- **AI & Machine Learning** : Coded a simple AI agent in Python using the **A* algorithm**. Trained a **machine learning model** using **logistic regression**. Familiar with **intelligent agents**, **search algorithms**, and **supervised learning**.
+`;
 
 export default function Page() {
+  const processedMarkdown = preprocessMarkdown(markdownContent);
+
+  // Split the markdown by line breaks into individual list items
+  const markdownLines = processedMarkdown.split("\n");
+
   return (
     <div className="flex flex-col  w-full items-center ">
       <div className="flex flex-col mx-auto text-white p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
@@ -79,70 +107,16 @@ export default function Page() {
             across various technical domains:
           </h2>
           <ul className="mx-auto lg:mx-10 font-serif my-2">
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                Software Design & Development
-              </span>
-              : Proficient in Python, with experience in software development
-              lifecycles, UML diagrams, and user-centered design.
-            </li>
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                Web Development
-              </span>
-              : Skilled in full-stack development and progressive web apps
-              (PWA). Built projects using Node.js with JavaScript and Next.js
-              with React + TypeScript.
-            </li>
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                Database Management
-              </span>
-              : Experience with relational databases, SQL, normalization, and
-              data integrity. Worked with MongoDB (NoSQL) for web development
-              projects.
-            </li>
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                Cybersecurity
-              </span>
-              : Understanding of CIA triad, cryptographic tools, risk
-              assessment, and security policies.
-            </li>
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                Network Security
-              </span>
-              : Applied knowledge in Packet Tracer to secure various network
-              topologies. Configured device security, server-based AAA, and
-              failover to local authentication. Implemented Access Control
-              Lists, port security, L2 VLAN security, and site-to-site VPNs. Set
-              up local SPAN and sniffer for network monitoring.
-            </li>
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                Data Structures & Operating Systems
-              </span>
-              : Strong grasp of data structures, algorithms, and binary algebra.
-              Knowledge of operating systems, including processes, threads, and
-              memory management.
-            </li>
-            <li className="my-2">
-              -
-              <span className="font-bold text-red-700 text-lg ml-1">
-                AI & Machine Learning
-              </span>
-              : Coded a simple AI agent in Python using the A* algorithm.
-              Trained a machine learning model using logistic regression.
-              Familiar with intelligent agents, search algorithms, and
-              supervised learning.
-            </li>
+            {markdownLines.map((line, index) => (
+              <li key={index} className="my-2">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]} // For GitHub-flavored markdown support
+                  rehypePlugins={[rehypeRaw]} // To allow raw HTML rendering (for <span>)
+                >
+                  {line}
+                </ReactMarkdown>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

@@ -12,7 +12,11 @@
     "next": "^15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.3",
     "react-slick": "^0.30.3",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1",
     "slick-carousel": "^1.8.1",
     "tailwindcss-motion": "^1.0.1"
   },
