@@ -33,7 +33,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col  w-full items-center ">
-      <div className="flex flex-col mx-auto text-white p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
+      <div className="flex flex-col mx-auto p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
         <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between xl:mt-20 ">
           <Image
             src={AboutMe}
@@ -41,7 +41,7 @@ export default function Page() {
             className=" max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden flex-1"
           ></Image>
           <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12 flex-1">
-            <h1 className="text-start w-full mx-auto mt-10 text-4xl  text-white border-b-2 border-white ">
+            <h1 className="text-start w-full mx-auto mt-10 text-4xl  border-b-2 border-black ">
               Who am I?
             </h1>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
@@ -99,7 +99,7 @@ export default function Page() {
         </div>
 
         <div className="flex flex-col justify-center mx-4  lg:justify-start xl:w-11/12  ">
-          <h1 className="text-start w-full text-4xl mt-10 text-white border-b-2 border-white xl:ml-10">
+          <h1 className="text-start w-full text-4xl mt-10  border-b-2 border-black xl:ml-10">
             Skills & Expertise
           </h1>
           <h2 className="mt-4 my-2 text-lg mx-auto text-center lg:text-start font-serif lg:ml-10">

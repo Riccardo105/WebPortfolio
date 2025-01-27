@@ -43,7 +43,7 @@ export default function Home() {
             {/*dowload resume button on desktop*/}
             <button
               type="button"
-              className="flex flew-row hidden mt-6 mx-4 text-xl bg-slate-500 p-2 rounded-xl font-mono xl:flex"
+              className="flex flew-row hidden mt-6 mx-4 text-xl  p-2 rounded-xl font-serif xl:flex border-2 border-black"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
             </button>
@@ -60,7 +60,7 @@ export default function Home() {
           {/*dowload resume button on mobile*/}
           <button
             type="button"
-            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl bg-slate-500 p-2 rounded-xl font-mono xl:hidden"
+            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl p-2 rounded-xl font-mono xl:hidden border-1 border-black"
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
           </button>
@@ -86,8 +86,8 @@ export default function Home() {
 
       <div className="flex flex-col mx-auto w-5/6 2xl:flex-row 2xl:mt-4   ">
         {/*About me preview*/}
-        <div className="flex flex-col text-white p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3  ">
-          <h1 className="text-start  text-4xl mt-10 text-white border-b-2 border-white">
+        <div className="flex flex-col  p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3  ">
+          <h1 className="text-start  text-4xl mt-10  border-b-2 border-black">
             About me
           </h1>
           <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
@@ -112,7 +112,7 @@ export default function Home() {
           </a>
         </div>
         <div className=" flex flex-col 2xl:ml-3 2xl:flex-1 2xl:w-5/6">
-          <h1 className="text-start  text-4xl mt-10 text-white border-b-2 border-white">
+          <h1 className="text-start  text-4xl mt-10  border-b-2 border-black">
             Contact me
           </h1>
           <ContactMeForm />
