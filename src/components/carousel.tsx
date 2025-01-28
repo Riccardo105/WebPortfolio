@@ -6,16 +6,17 @@ import "slick-carousel/slick/slick-theme.css";
 import "../app/globals.css";
 import { StaticImageData } from "next/image";
 
+// carousel item interface
 export interface CarouselItem {
   id: number;
   title: string;
   image: StaticImageData;
 }
-
+// define that carousel props must be an array of carousel items
 interface CarouselProps {
   data: CarouselItem[];
 }
-
+// carousel data is given by call in homepage 
 export default function Carousel({ data }: CarouselProps) {
   const settings = {
     dots: true,
