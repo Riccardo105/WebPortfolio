@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../app/globals.css";
 import { StaticImageData } from "next/image";
+import { Link } from "react-router-dom";
 
 // carousel item interface
 export interface CarouselItem {
@@ -16,7 +17,7 @@ export interface CarouselItem {
 interface CarouselProps {
   data: CarouselItem[];
 }
-// carousel data is given by call in homepage 
+// carousel data is given by call in homepage
 export default function Carousel({ data }: CarouselProps) {
   const settings = {
     dots: true,
@@ -53,10 +54,11 @@ export default function Carousel({ data }: CarouselProps) {
       <Slider {...settings}>
         {data.map((data) => (
           <button
+            id={`/projects#project-${data.id}`} // Add the unique ID for each project
             key={data.id}
             className="!flex !justify-center !items-center !h-64 "
             onClick={() => {
-              window.location.href = `/projects/${data.title}`;
+              window.location.href = `/projects#${data.id}`;
             }}
           >
             <div className="!w-full !max-w-sm !p-4 !bg-white !rounded-lg !shadow-md">
