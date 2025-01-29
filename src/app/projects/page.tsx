@@ -8,6 +8,7 @@ import Basketball from "../../../public/images/Basketball.jpg";
 import GiftWrapping from "../../../public/images/GiftWrapping.jpeg";
 import CraneAI from "../../../public/images/CraneAI.jpg";
 import NetworkSecurity from "../../../public/images/NewtworkSecurity.webp";
+import Portfolio from "../../../public/images/Portofolio.webp";
 
 // data for projects page
 interface ProjectsProps {
@@ -34,15 +35,16 @@ const Projects: ProjectsProps[] = [
   },
   {
     id: 2,
-    title: "GiftWrappingService",
-    image: GiftWrapping,
+    title: "Web Portfolio",
+    image: Portfolio,
     overview:
-      "This was my first-ever project for my software design and development module. While relatively simple, it played a crucial role in helping me get accustomed to coding. The project is a service where users can customize the wrapping of a gift by selecting options such as dimensions, wrapping paper color, and additional extras like cards or bows. The program calculates a quote based on the required amount of paper and any additional features. To further my understanding of SQL databases, I also integrated a small SQLite database into the project. Although the project remains unfinished, it was an invaluable experience as my first step into programming.",
-    technologies: "Python, TKinter, UML, SQLite,",
+      "This project is my personal web portfolio, a platform designed to introduce myself, showcase my skills, and present my projects in a professional and engaging manner. Visitors can explore my background, browse through my work, and download my resume directly from the site. Additionally, a dedicated contact section allows potential collaborators or employers to easily reach out to me. Building on the experience gained from previous projects, I focused on creating a modern, responsive, and user-friendly interface that reflects my growth as a developer. This portfolio serves as a central hub for my professional identity and accomplishments.",
+    technologies: "React, Next.js, TypeScript, tailwind CSS, ",
     skillsLearnt:
-      " problem-solving, user interface creation, basic database management, principles of Software design and development",
+      "Advanced front-end development, responsive design, TypeScript integration, performance optimization, modern web development practices",
     linkType: "github",
   },
+
   {
     id: 3,
     title: "Crane AI",
@@ -65,6 +67,17 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       "Network Security, AAA, site-to-site VPN, ACL, port security, Packet Tracer, local span and sniffer, L2 VLAN security",
     linkType: "download",
+  },
+  {
+    id: 5,
+    title: "GiftWrappingService",
+    image: GiftWrapping,
+    overview:
+      "This was my first-ever project for my software design and development module. While relatively simple, it played a crucial role in helping me get accustomed to coding. The project is a service where users can customize the wrapping of a gift by selecting options such as dimensions, wrapping paper color, and additional extras like cards or bows. The program calculates a quote based on the required amount of paper and any additional features. To further my understanding of SQL databases, I also integrated a small SQLite database into the project. Although the project remains unfinished, it was an invaluable experience as my first step into programming.",
+    technologies: "Python, TKinter, UML, SQLite,",
+    skillsLearnt:
+      " problem-solving, user interface creation, basic database management, principles of Software design and development",
+    linkType: "github",
   },
 ];
 
@@ -126,7 +139,7 @@ export default function Page() {
             </h1>
             <p>{project.skillsLearnt}</p>
             <div className="flex justify-center">
-              <button className="rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit">
+              <button className="rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center">
                 <i
                   className={`mx-2 ${getIconForProject(project.linkType)}`}
                 ></i>

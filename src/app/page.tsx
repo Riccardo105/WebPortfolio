@@ -7,6 +7,7 @@ import Basketball from "../../public/images/Basketball.jpg";
 import GiftWrapping from "../../public/images/GiftWrapping.jpeg";
 import CraneAI from "../../public/images/CraneAI.jpg";
 import NetworkSecurity from "../../public/images/NewtworkSecurity.webp";
+import Portfolio from "../../public/images/Portofolio.webp";
 
 import ProjectCarousel from "components/carousel";
 import { CarouselItem } from "components/carousel";
@@ -16,12 +17,14 @@ import ContactMeForm from "components/contactMeForm";
 
 const Projects: CarouselItem[] = [
   { id: 1, title: "BasketballLearningPlatform", image: Basketball },
-  { id: 2, title: "Gift Wrapping Service", image: GiftWrapping },
+  { id: 2, title: "Web Portfolio", image: Portfolio },
   { id: 3, title: "Crane AI", image: CraneAI },
   { id: 4, title: "Network Security", image: NetworkSecurity },
+  { id: 5, title: "Gift Wrapping Service", image: GiftWrapping },
 ];
 
 export default function Home() {
+  const myResume = "/files/portfolio.pdf";
   return (
     <div className="flex flex-col flex-grow ">
       <div className=" flex flex-col  xl:flex-row justify-between  ">
@@ -41,12 +44,13 @@ export default function Home() {
             </p>
 
             {/*dowload resume button on desktop*/}
-            <button
-              type="button"
-              className="flex flew-row hidden mt-6 mx-4 text-xl  p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
+            <a
+              href={myResume}
+              download="Riccardo's Resume"
+              className="flex flew-row hidden mt-6 mx-4 text-xl w-fit p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
-            </button>
+            </a>
           </div>
         </div>
 
