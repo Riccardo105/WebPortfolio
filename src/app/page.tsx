@@ -24,7 +24,7 @@ const Projects: CarouselItem[] = [
 ];
 
 export default function Home() {
-  const myResume = "/files/portfolio.pdf";
+  const myResume = "/files/CV.pdf";
   return (
     <div className="flex flex-col flex-grow ">
       <div className=" flex flex-col  xl:flex-row justify-between  ">
@@ -46,7 +46,7 @@ export default function Home() {
             {/*dowload resume button on desktop*/}
             <a
               href={myResume}
-              download="Riccardo's Resume"
+              download="Riccardo_Barone_cv"
               className="flex flew-row hidden mt-6 mx-4 text-xl w-fit p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
@@ -62,12 +62,13 @@ export default function Home() {
             className="  mx-auto 2xl:w-[600px] 2xl:h-[800px] "
           />
           {/*dowload resume button on mobile*/}
-          <button
-            type="button"
+          <a
+            href={myResume}
+            download="Riccardo_Barone_cv"
             className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl p-2 rounded-xl font-serif xl:hidden  bg-white border-2 border-black"
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
-          </button>
+          </a>
         </div>
 
         {/*links on desktop (on mobile are within header*/}
