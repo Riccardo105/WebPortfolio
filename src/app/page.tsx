@@ -9,8 +9,8 @@ import CraneAI from "../../public/images/CraneAI.jpg";
 import NetworkSecurity from "../../public/images/NewtworkSecurity.webp";
 import Portfolio from "../../public/images/Portofolio.webp";
 
-import ProjectCarousel from "components/carousel";
-import { CarouselItem } from "components/carousel";
+import ProjectCarousel from "components/projectCarousel";
+import { CarouselItem } from "components/projectCarousel";
 import ContactMeForm from "components/contactMeForm";
 
 // data for projects carousel
@@ -47,7 +47,7 @@ export default function Home() {
             <a
               href={myResume}
               download="Riccardo_Barone_cv"
-              className="flex flew-row hidden mt-6 mx-4 text-xl w-fit p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
+              className="flew-row hidden mt-6 mx-4 text-xl w-fit p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
             </a>

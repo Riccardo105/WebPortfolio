@@ -79,12 +79,16 @@ export default function Page() {
             </p>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
               One of the most transformative experiences of my life was
-              volounterring in Bali with Think Pacific (as seen in the photo).
-              The time there allowed me to immerse myself in a new culture,
-              contribute to meaningful projects, and grow as an individual. It
-              reinforced my belief in the importance of adaptability, cultural
-              understanding, and embracing new perspectives—values I carry with
-              me every day.
+              <span className="mx-1">
+                <a className="text-blue-500" href="/Volounteering_in_Bali">
+                  volounterring in Bali
+                </a>
+              </span>
+              with Think Pacific (as seen in the photo). The time there allowed
+              me to immerse myself in a new culture, contribute to meaningful
+              projects, and grow as an individual. It reinforced my belief in
+              the importance of adaptability, cultural understanding, and
+              embracing new perspectives—values I carry with me every day.
             </p>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
               Looking ahead, I’m excited to continue growing as a technologist,
