@@ -81,7 +81,7 @@ export default function Page() {
           alt="Mas village, Ubud"
         ></Image>
         <h1 className=" text-start border-b-2 border-black mb-2 ">
-          Think Pacific
+          Mas Village
         </h1>
         <p className="text-start">
           <span className="font-bold">Mas Village</span>,
@@ -100,10 +100,85 @@ export default function Page() {
 
       <div className="mx-4 my-6">
         <BaliCarousel images={BHG} />
+        <h1 className=" text-start border-b-2 border-black mb-2 mt-8 ">
+          Black Hand Gang
+        </h1>
+        <div className="flex flex-col">
+          <p className="text-start mb-1">
+            The<span className="font-bold mx-1">Black Hand Gang </span>, is an
+            Indonesian printmaking business that collaborates with artists,
+            galleries, and clients to publish artworks. They aim to push the
+            boundaries of traditional printmaking and inspire younger
+            generations to engage with this art form.
+          </p>
+          <p className="text-start mb-1">
+            During the internship, we developed strategies to increase the
+            business's recognition. These included:
+          </p>
+          <ul>
+            <li className="mb-1">- Launching a fundraising campaign.</li>
+            <li className="mb-1">
+              - Establishing partnerships with prominent Balinese and Indonesian
+              art universities
+            </li>
+            <li className="mb-1">
+              - Participating in charity events, potentially reinvesting a
+              portion of the fundraising profits to enhance the brand's reach
+              and impact.
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="mx-4 my-6">
         <BaliCarousel images={Membumi} />
+
+        <h1 className=" text-start border-b-2 border-black mb-2 mt-8 ">
+          Membumi
+        </h1>
+        <div className="flex flex-col">
+          <p className="text-start mb-1">
+            <span className="font-bold mx-1">Membumi</span>, Membumi is a
+            pottery-making business dedicated to preserving traditional
+            craftsmanship. They attract younger generations and tourists through
+            workshops held at their headquarters, where visitors can observe
+            elderly artisans using traditional techniques and even try their
+            hand at pottery.
+          </p>
+          <p className="text-start mb-1">
+            Our consultation focused on strategies to increase revenue and brand
+            reach. Key suggestions included:
+          </p>
+          <ul>
+            <li className="mb-1">- Launching a fundraising campaign.</li>
+            <li className="mb-1">
+              - Establishing partnerships with prominent Balinese and Indonesian
+              art universities
+            </li>
+            <li className="mb-1">
+              - Participating in charity events, potentially reinvesting a
+              portion of the fundraising profits to enhance the brand's reach
+              and impact.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-4 my-6">
+        <h1 className=" text-start border-b-2 border-black mb-2 ">
+          Final Thoughts
+        </h1>
+        <p className="text-start">
+          I am incredibly grateful for this unforgettable experience in Bali.
+          Through the Global Team Internship, I not only had the opportunity to
+          immerse myself in a vibrant culture but also met so many amazing
+          people, many of whom I know will remain lifelong friends.
+          Additionally, I was able to develop and strengthen essential skills,
+          such as public speaking, time management, and teamwork, which will
+          undoubtedly benefit me in the future. This journey has left a lasting
+          impact on me, both personally and professionally, and I will cherish
+          the memories and lessons learned for years to come.
+        </p>
       </div>
     </div>
   );
