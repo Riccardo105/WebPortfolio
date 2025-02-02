@@ -19,6 +19,9 @@ interface ProjectsProps {
   technologies: string;
   skillsLearnt: string;
   linkType: string;
+  link: string;
+  isDownloadable: boolean;
+  fileName?: string;
 }
 
 const Projects: ProjectsProps[] = [
@@ -32,6 +35,8 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       "Full-stack development, Progressive Web Apps, Database Management, API Development,",
     linkType: "github",
+    link: "bla",
+    isDownloadable: false,
   },
   {
     id: 2,
@@ -43,6 +48,8 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       "Advanced front-end development, responsive design, TypeScript integration, performance optimization, modern web development practices",
     linkType: "github",
+    link: "bla",
+    isDownloadable: false,
   },
 
   {
@@ -56,6 +63,8 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       "AI problem-solving, search algorithms, logic-based AI design, machine learning model training, and data analysis using logistic regression",
     linkType: "github",
+    link: "bla",
+    isDownloadable: false,
   },
   {
     id: 4,
@@ -67,6 +76,9 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       "Network Security, AAA, site-to-site VPN, ACL, port security, Packet Tracer, local span and sniffer, L2 VLAN security",
     linkType: "download",
+    link: "/files/CV.pdf",
+    isDownloadable: true,
+    fileName: "Network_Security_project",
   },
   {
     id: 5,
@@ -78,9 +90,11 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       " problem-solving, user interface creation, basic database management, principles of Software design and development",
     linkType: "github",
+    link: "bla",
+    isDownloadable: false,
   },
 ];
-
+// set icon to buttons
 function getIconForProject(linkType: string) {
   switch (linkType) {
     case "github":
@@ -89,6 +103,7 @@ function getIconForProject(linkType: string) {
       return "fa-solid fa-download";
   }
 }
+
 export default function Page() {
   useEffect(() => {
     const hash = window.location.hash;
@@ -110,7 +125,7 @@ export default function Page() {
           id={project.id.toString()}
           className="flex flex-col items-start justify-center w-11/12 p-4 my-6 mx-auto xl:flex-row xl:items-center"
         >
-          <h2 className="text-lg font-bold xl:hidden m-4 w-11/12 text-center text-xl ">
+          <h2 className=" font-bold xl:hidden m-4 w-11/12 text-center text-xl ">
             {project.title}
           </h2>
           <div className="flex xl:flex-1 justify-center items-center lg:mx-auto">
@@ -139,12 +154,16 @@ export default function Page() {
             </h1>
             <p>{project.skillsLearnt}</p>
             <div className="flex justify-center">
-              <button className="rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center">
+              <a
+                href={project.link}
+                {...(project.isDownloadable && { download: project.fileName })}
+                className="rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center"
+              >
                 <i
                   className={`mx-2 ${getIconForProject(project.linkType)}`}
                 ></i>
                 View Project
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -81,7 +81,7 @@ export default function Page() {
               One of the most transformative experiences of my life was
               <span className="mx-1">
                 <a className="text-blue-500" href="/Volounteering_in_Bali">
-                  volounterring in Bali
+                  volunterring in Bali
                 </a>
               </span>
               with Think Pacific (as seen in the photo). The time there allowed

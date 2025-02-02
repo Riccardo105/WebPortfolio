@@ -39,20 +39,24 @@ export default function Page() {
           Volounteering in Bali
         </h1>
 
-        <h1 className=" text-start border-b-2 border-black mx-4 mb-3 lg:text-xl">
-          Global team Internship
-        </h1>
-        <p className="text-start, mx-4 mb-2">
-          In June 2024, I participated in the
-          <span className="font-bold ml-1">Global Team Internship in Bali</span>
-          Global Team Internship in Bali, Indonesia, an immersive program
-          centered around Ubud Village. During this experience, I lived in Mas
-          Village, a small traditional community located 6 kilometers south of
-          Ubud, renowned for its intricate woodcarving artistry. The internship
-          aimed to support local businesses and charities by developing
-          practical and sustainable solutions to their challenges, while also
-          fostering cultural exchange and personal growth.
-        </p>
+        <div className=" my-10 ">
+          <h1 className=" text-start border-b-2 border-black mx-4 mb-3 lg:text-xl">
+            Global team Internship
+          </h1>
+          <p className="text-start, mx-4 mb-2">
+            In June 2024, I participated in the
+            <span className="font-bold ml-1">
+              Global Team Internship in Bali
+            </span>
+            Global Team Internship in Bali, Indonesia, an immersive program
+            centered around Ubud Village. During this experience, I lived in Mas
+            Village, a small traditional community located 6 kilometers south of
+            Ubud, renowned for its intricate woodcarving artistry. The
+            internship aimed to support local businesses and charities by
+            developing practical and sustainable solutions to their challenges,
+            while also fostering cultural exchange and personal growth.
+          </p>
+        </div>
 
         <div className="mx-4 my-6">
           <Image
@@ -63,7 +67,7 @@ export default function Page() {
           <h1 className=" text-start border-b-2 border-black mb-3 lg:text-xl ">
             Think Pacific
           </h1>
-          <div className=" lg:flex lg:flex-row lg:items-center">
+          <div className=" lg:flex lg:flex-row lg:items-center justify-between">
             <Image
               className="mb-4 hidden lg:flex lg:flex-1 mr-4 lg:max-w-2xl mt-2 "
               src={ThinkPacificLogo}
@@ -136,7 +140,7 @@ export default function Page() {
                 push the boundaries of traditional printmaking and inspire
                 younger generations to engage with this art form.
               </p>
-              <p className="text-start mb-1">
+              <p className="text-start mb-2 lg:text-center">
                 During the internship, we developed strategies to increase the
                 business's recognition. These included:
               </p>
@@ -186,7 +190,7 @@ export default function Page() {
                 observe elderly artisans using traditional techniques and even
                 try their hand at pottery.
               </p>
-              <p className="text-start mb-1">
+              <p className="text-start mb-2">
                 Our consultation focused on strategies to increase revenue and
                 brand reach. Key suggestions included:
               </p>
@@ -206,7 +210,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="mx-4 my-6">
+        <div className=" my-10 ">
           <h1 className=" text-start border-b-2 border-black mb-2 lg:text-xl ">
             Final Thoughts
           </h1>

@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/*links on desktop (on mobile are within header*/}
-        <div className="  flex flex-col justify-center items-center text-3xl hidden xl:flex flex-grow-0 w-auto ">
+        <div className="   flex-col justify-center items-center text-3xl hidden xl:flex flex-grow-0 w-auto ">
           <a className="fa-solid fa-envelope my-4 mr-6 2xl:my-8 2xl:mr-12"></a>
           <a
             className="fa-brands fa-instagram my-4 mr-6 2xl:my-8 2xl:mr-12"
