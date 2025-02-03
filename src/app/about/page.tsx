@@ -33,7 +33,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col  w-full items-center ">
-      <div className="flex flex-col mx-auto p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
+      <div className="flex flex-col mx-auto p-auto xl:w-11/12 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
         <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between xl:mt-20 ">
           <Image
             src={AboutMe}
@@ -101,7 +101,7 @@ export default function Page() {
           <Image
             src={AboutMe}
             alt="AboutMe Picture"
-            className=" hidden max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:block"
+            className=" hidden  xl:max-h-full overflow-hidden object-contain  md:w-auto md:h-[600px] xl:block"
           ></Image>
         </div>
 
