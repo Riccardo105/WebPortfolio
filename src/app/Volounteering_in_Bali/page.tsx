@@ -60,7 +60,7 @@ export default function Page() {
 
         <div className="mx-4 my-6">
           <Image
-            className="mb-4 lg:hidden"
+            className="mb-4 lg:hidden rounded-lg"
             src={ThinkPacificLogo}
             alt="Think Pacific Logo"
           ></Image>
@@ -69,7 +69,7 @@ export default function Page() {
           </h1>
           <div className=" lg:flex lg:flex-row lg:items-center justify-between">
             <Image
-              className="mb-4 hidden lg:flex lg:flex-1 mr-4 lg:max-w-2xl mt-2 "
+              className="mb-4 hidden lg:flex lg:flex-1 mr-4 lg:max-w-2xl mt-2 rounded-lg "
               src={ThinkPacificLogo}
               alt="Think Pacific Logo"
             ></Image>
