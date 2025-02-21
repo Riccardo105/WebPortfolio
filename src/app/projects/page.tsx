@@ -132,7 +132,7 @@ export default function Page() {
             <Image
               src={project.image}
               alt={project.title}
-              className=" lg:max-w-2xl "
+              className="lg:max-w-xl "
             />
           </div>
 
