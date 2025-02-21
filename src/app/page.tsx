@@ -27,17 +27,17 @@ export default function Home() {
   const myResume = "/files/CV.pdf";
   return (
     <div className="flex flex-col flex-grow ">
-      <div className=" flex flex-col  xl:flex-row justify-between  ">
-        <div className="w-auto flex flex-1 flex-col font-serif text-start mt-10 xl:mt-0  ">
+      <div className=" flex flex-col xl:flex-row justify-between  ">
+        <div className="flex flex-col flex-1 w-auto  font-serif text-start mt-10 xl:mt-0  ">
           {/*welcome message*/}
           <div className="xl:w-2/3 xl:m-auto  ">
-            <p className="text-xl ml-4 text-start xl:ml-6 xl:text-lg mb-4 text-red-700 font-bold">
+            <p className=" ml-4 xl:ml-6 mb-4 text-xl xl:text-lg text-start text-red-700 font-bold">
               - I am
             </p>
-            <p className="text-5xl xl:text-6xl  m-4 font-serif">
+            <p className=" m-4 text-5xl xl:text-6xl font-serif">
               Riccardo Barone
             </p>
-            <p className="text-lg m-4 font-serif">
+            <p className=" m-4 text-lg font-serif">
               Computer Science student with a passion for software engineering
               and cybersecurity, dedicated to building innovative and secure
               solutions
@@ -47,7 +47,7 @@ export default function Home() {
             <a
               href={myResume}
               download="Riccardo_Barone_cv"
-              className="flew-row hidden mt-6 mx-4 text-xl w-fit p-2 rounded-xl font-serif xl:flex bg-white border-2 border-black"
+              className=" hidden xl:flex flex-row mt-6 mx-4 w-fit p-2 text-xl font-serif rounded-xl bg-white border-2 border-black"
             >
               <i className=" fa-solid fa-download mx-2"></i> Download Resume
             </a>
@@ -65,14 +65,14 @@ export default function Home() {
           <a
             href={myResume}
             download="Riccardo_Barone_cv"
-            className="flex flew-row justify-center w-56 mt-6 mx-auto text-xl p-2 rounded-xl font-serif xl:hidden  bg-white border-2 border-black"
+            className="flex xl:hidden flew-row justify-center w-56 mt-10 mx-auto p-2 text-xl font-serif rounded-xl bg-white border-2 border-black"
           >
             <i className=" fa-solid fa-download mx-2"></i> Download Resume
           </a>
         </div>
 
         {/*links on desktop (on mobile are within header*/}
-        <div className="   flex-col justify-center items-center text-3xl hidden xl:flex flex-grow-0 w-auto ">
+        <div className=" hidden xl:flex flex-grow-0 flex-col justify-center items-center w-auto text-3xl  ">
           <a className="fa-solid fa-envelope my-4 mr-6 2xl:my-8 2xl:mr-12"></a>
           <a
             className="fa-brands fa-instagram my-4 mr-6 2xl:my-8 2xl:mr-12"
@@ -91,8 +91,8 @@ export default function Home() {
 
       <div className="flex flex-col mx-auto w-5/6 2xl:flex-row 2xl:mt-4   ">
         {/*About me preview*/}
-        <div className="flex flex-col  p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3  ">
-          <h1 className="text-start  text-4xl mt-10  border-b-2 border-black">
+        <div className="flex flex-col p-auto 2xl:w-5/6 2xl:flex-1 2xl:mr-3  ">
+          <h1 className="text-start text-4xl mt-10  border-b-2 border-black">
             About me
           </h1>
           <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
@@ -110,14 +110,14 @@ export default function Home() {
             challenge me creatively and physically.
           </p>
           <a
-            className="justify-center text-center mt-6 w-56 mx-auto text-xl bg-white border-black border-2 p-2 rounded-xl font-serif"
+            className="justify-center text-center mt-6 w-56 mx-auto p-2 text-xl font-serif bg-white border-black border-2 rounded-xl "
             href="/about"
           >
             Find out more
           </a>
         </div>
         <div className=" flex flex-col 2xl:ml-3 2xl:flex-1 2xl:w-5/6">
-          <h1 className="text-start  text-4xl mt-10  border-b-2 border-black">
+          <h1 className=" text-start text-4xl mt-10  border-b-2 border-black">
             Contact me
           </h1>
           <ContactMeForm />
@@ -126,7 +126,7 @@ export default function Home() {
 
       {/*projects carousel*/}
       <div className=" slider-wrapper w-5/6 justify-center mx-auto ">
-        <p className="text-start pl-2 text-4xl mt-10 border-b-2 border-black">
+        <p className=" text-start pl-2 text-4xl mt-10 border-b-2 border-black">
           My Projects
         </p>
         <Suspense fallback={<div>Loading...</div>}>
