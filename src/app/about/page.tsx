@@ -101,7 +101,7 @@ export default function Page() {
           <Image
             src={AboutMe}
             alt="AboutMe Picture"
-            className=" hidden  xl:max-h-full overflow-hidden object-contain  md:w-auto md:h-[600px] xl:block"
+            className=" hidden xl:max-h-full overflow-hidden object-contain  md:w-auto md:h-[600px] xl:block"
           ></Image>
         </div>
 
@@ -109,7 +109,7 @@ export default function Page() {
           <h1 className="text-start w-full text-4xl mt-10  border-b-2 border-black xl:ml-10">
             Skills & Expertise
           </h1>
-          <h2 className="mt-4 my-2 text-lg mx-auto text-center lg:text-start font-serif lg:ml-10">
+          <h2 className="mt-4 my-2 mx-auto text-center lg:text-start font-serif lg:ml-10">
             Through my academic journey, I’ve developed a diverse skill set
             across various technical domains:
           </h2>

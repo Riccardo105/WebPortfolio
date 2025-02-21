@@ -59,7 +59,7 @@ export default function Home() {
           <Image
             src={ProfilePicture}
             alt="Profile Picture"
-            className="  mx-auto 2xl:w-[600px] 2xl:h-[800px] "
+            className="  mx-auto xl:w-[500px] xl:h-[700px] 2xl:w-[600px] 2xl:h-[800px] "
           />
           {/*dowload resume button on mobile*/}
           <a

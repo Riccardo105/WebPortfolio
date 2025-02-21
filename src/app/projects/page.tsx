@@ -19,8 +19,8 @@ interface ProjectsProps {
   technologies: string;
   skillsLearnt: string;
   linkType: string;
-  link: string;
-  isDownloadable: boolean;
+  link?: string;
+  isLinkable: boolean;
   fileName?: string;
 }
 
@@ -36,7 +36,7 @@ const Projects: ProjectsProps[] = [
       "Full-stack development, Progressive Web Apps, Database Management, API Development,",
     linkType: "github",
     link: "bla",
-    isDownloadable: false,
+    isLinkable: true,
   },
   {
     id: 2,
@@ -44,12 +44,12 @@ const Projects: ProjectsProps[] = [
     image: Portfolio,
     overview:
       "This project is my personal web portfolio, a platform designed to introduce myself, showcase my skills, and present my projects in a professional and engaging manner. Visitors can explore my background, browse through my work, and download my resume directly from the site. Additionally, a dedicated contact section allows potential collaborators or employers to easily reach out to me. Building on the experience gained from previous projects, I focused on creating a modern, responsive, and user-friendly interface that reflects my growth as a developer. This portfolio serves as a central hub for my professional identity and accomplishments.",
-    technologies: "React, Next.js, TypeScript, tailwind CSS, ",
+    technologies: "React, Next.js, TypeScript, TailwindCSS ",
     skillsLearnt:
       "Advanced front-end development, responsive design, TypeScript integration, performance optimization, modern web development practices",
     linkType: "github",
     link: "bla",
-    isDownloadable: false,
+    isLinkable: true,
   },
 
   {
@@ -59,12 +59,12 @@ const Projects: ProjectsProps[] = [
     overview:
       "This project was part of my AI and Machine Learning module, where I explored core concepts of artificial intelligence, including agents, environments, and search algorithms. I learned about designing AI systems using logical relations and transition models, particularly using PDDL (Planning Domain Definition Language). Additionally, the module introduced machine learning concepts. The project consisted of two parts: the first involved programming an AI agent to solve a crate-sorting problem, for which I implemented the A* algorithm. The second part focused on training a machine learning model using logistic regression on a provided dataset. This project deepened my understanding of AI problem-solving and machine learning techniques.",
     technologies:
-      "Python,PDDL, A* algorithm, logistic regression, scikit-learn, and AI problem-solving frameworks",
+      "Python, PDDL, A* algorithm, logistic regression, scikit-learn, and AI problem-solving frameworks",
     skillsLearnt:
       "AI problem-solving, search algorithms, logic-based AI design, machine learning model training, and data analysis using logistic regression",
     linkType: "github",
     link: "bla",
-    isDownloadable: false,
+    isLinkable: true,
   },
   {
     id: 4,
@@ -76,8 +76,7 @@ const Projects: ProjectsProps[] = [
     skillsLearnt:
       "Network Security, AAA, site-to-site VPN, ACL, port security, Packet Tracer, local span and sniffer, L2 VLAN security",
     linkType: "download",
-    link: "/files/CV.pdf",
-    isDownloadable: true,
+    isLinkable: false,
     fileName: "Network_Security_project",
   },
   {
@@ -91,7 +90,7 @@ const Projects: ProjectsProps[] = [
       " problem-solving, user interface creation, basic database management, principles of Software design and development",
     linkType: "github",
     link: "bla",
-    isDownloadable: false,
+    isLinkable: true,
   },
 ];
 // set icon to buttons
@@ -156,8 +155,11 @@ export default function Page() {
             <div className="flex justify-center">
               <a
                 href={project.link}
-                {...(project.isDownloadable && { download: project.fileName })}
-                className="rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center"
+                {...(project.isLinkable
+                  ? {
+                      className : "rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center",
+                    }
+                  : { className: "hidden" })}
               >
                 <i
                   className={`mx-2 ${getIconForProject(project.linkType)}`}
