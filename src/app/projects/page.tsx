@@ -33,7 +33,7 @@ const Projects: ProjectsProps[] = [
       "The Basketball Learning Platform is a Progressive Web App (PWA) developed as part of my web development module. Designed as a training hub for basketball enthusiasts, it provides a variety of exercises to help users enhance their skills. Users can create personalized accounts to track completed exercises and monitor their progress over time. The app leverages server-side rendering (SSR) for improved performance and is integrated with a MongoDB database to ensure a seamless and dynamic user experience. As a PWA, it offers the added convenience of being installable on mobile devices, making it easily accessible for on-the-go training.",
     technologies: "JavaScript, nodeJS, EJS, html, mongoDB, TailwindCSS",
     skillsLearnt:
-      "Full-stack development, Progressive Web Apps, Database Management, API Development,",
+      "Full-stack development, Progressive Web Apps, Database Management, API Development, MVC-pattern implementation, SSR (Server-Side Rendering), and user authentication",
     linkType: "github",
     link: "bla",
     isDownloadable: false,
@@ -59,7 +59,7 @@ const Projects: ProjectsProps[] = [
     overview:
       "This project was part of my AI and Machine Learning module, where I explored core concepts of artificial intelligence, including agents, environments, and search algorithms. I learned about designing AI systems using logical relations and transition models, particularly using PDDL (Planning Domain Definition Language). Additionally, the module introduced machine learning concepts. The project consisted of two parts: the first involved programming an AI agent to solve a crate-sorting problem, for which I implemented the A* algorithm. The second part focused on training a machine learning model using logistic regression on a provided dataset. This project deepened my understanding of AI problem-solving and machine learning techniques.",
     technologies:
-      "Python,PDDL, A* algorithm, logistic regression, scikit-learn, and AI problem-solving frameworks",
+      "Python, PDDL, A* algorithm, logistic regression, scikit-learn, and AI problem-solving frameworks",
     skillsLearnt:
       "AI problem-solving, search algorithms, logic-based AI design, machine learning model training, and data analysis using logistic regression",
     linkType: "github",

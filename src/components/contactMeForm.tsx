@@ -66,7 +66,7 @@ export default function ContactMeForm() {
   };
 
   return (
-    <div className=" flex flex-col items-center justify-center mt-10">
+    <div className=" flex flex-col items-center justify-center ">
       <form
         onSubmit={onSubmit}
         className=" w-full flex flex-col items-start justify-start "

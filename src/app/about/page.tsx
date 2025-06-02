@@ -18,11 +18,12 @@ const preprocessMarkdown = (markdown: string): string => {
 const markdownContent = `
 - **Software Design & Development** : Proficient in **Python**, with experience in software development lifecycles, **UML diagrams**, and user-centered design.
 - **Web Development** : Skilled in **full-stack development** and **progressive web apps** (PWA). Built projects using **Node.js** with **JavaScript** and **Next.js** with **React** + **TypeScript**.
-- **Database Management** : Experience with **relational databases**, **SQL**, normalization, and data integrity. Worked with **MongoDB** (NoSQL) for web development projects.
-- **Cybersecurity** : Understanding of **CIA triad**, **cryptographic tools**, **risk assessment**, and **security policies**.
+- **Database Management** : Experience with **relational databases**, **SQL**, **normalization principles**, and **data integrity**. Worked with, **document-based databases** using **MongoDB** (NoSQL) for web development projects.
+- **Cybersecurity** : Understanding of **OSI model**, **CIA triad**, **cryptographic tools**, **risk assessment**, and **security policies**.
 - **Network Security** : Applied knowledge in **Packet Tracer** to secure various network topologies. Configured device security, **server-based AAA**. Implemented **Access Control List**, **port security**, **L2 VLAN security**, and **site-to-site VPNs**. Set up local SPAN and sniffer for network monitoring.
 - **Data Structures & Operating Systems** : Strong grasp of **data structures**, **algorithms**, and **binary algebra**. Knowledge of **operating systems**, including **processes**, **threads**, and **memory management**.
-- **AI & Machine Learning** : Coded a simple AI agent in Python using the **A* algorithm**. Trained a **machine learning model** using **logistic regression**. Familiar with **intelligent agents**, **search algorithms**, and **supervised learning**.
+- **AI & Machine Learning** : Coded a simple AI agent in Python using the **A-star algorithm**. Trained a **machine learning model** using **logistic regression**. Familiar with **intelligent agents**, **search algorithms**, and **supervised learning**.
+- **Object-Oriented Software Development** : Proficient in **Java**, with a strong grasp of **OOP principles**. Applied design patterns like **DTO**, **DAO**, and **Service Layer** for modular architecture. Experience with **Hibernate** for ORM-based database interactions and efficient data persistence.
 `;
 
 export default function Page() {
@@ -32,13 +33,13 @@ export default function Page() {
   const markdownLines = processedMarkdown.split("\n");
 
   return (
-    <div className="flex flex-col  w-full items-center ">
+    <div className="flex flex-col  w-full items-center font-serif ">
       <div className="flex flex-col mx-auto p-auto xl:w-11/12 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
-        <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between xl:mt-20 ">
+        <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between md:mt-4 xl:mt-20 ">
           <Image
             src={AboutMe}
             alt="AboutMe Picture"
-            className=" max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden flex-1"
+            className="max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden flex-1"
           ></Image>
           <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12 ">
             <h1 className="text-start w-full mx-auto mt-10 text-4xl  border-b-2 border-black ">
@@ -109,7 +110,7 @@ export default function Page() {
           <h1 className="text-start w-full text-4xl mt-10  border-b-2 border-black xl:ml-10">
             Skills & Expertise
           </h1>
-          <h2 className="mt-4 my-2 text-lg mx-auto text-center lg:text-start font-serif lg:ml-10">
+          <h2 className="mt-4 my-2 text-md mx-auto text-center lg:text-start font-serif lg:ml-10">
             Through my academic journey, I’ve developed a diverse skill set
             across various technical domains:
           </h2>

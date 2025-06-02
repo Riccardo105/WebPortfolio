@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import Link from "next/link";
 
 <link
   rel="stylesheet"
@@ -77,7 +78,7 @@ export default function Header() {
   }
 
   return (
-    <header className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6">
+    <header className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6 font-serif">
       {/* burger menu icon, disappear on deskop as entries are shown in main header */}
       <div className="items-start xl:hidden">
         <i
@@ -87,22 +88,28 @@ export default function Header() {
       </div>
       {/* menu entries on desktop within main header */}
       <div>
-        <MenuItems styling=" flex-row text-2xl hidden  xl:flex font-sans cursor-pointer" />
+        <MenuItems styling=" flex-row text-2xl hidden  xl:flex cursor-pointer" />
       </div>
       <div className=" items-end text-3xl xl:pl-2 xl:hidden ">
         <a className="fa-solid fa-envelope px-2 xl:px-4"></a>
-        <a
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
           className="fa-brands fa-instagram px-2 xl:px-4"
           href="https://www.instagram.com/_.riccardobarone._/"
-        ></a>
-        <a
+        ></Link>
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
           className="fa-brands fa-linkedin px-2 xl:px-4"
           href="https://www.linkedin.com/in/riccardo-barone/"
-        ></a>
-        <a
+        ></Link>
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
           className="fa-brands fa-github xl:px-4"
           href="https://github.com/Riccardo105"
-        ></a>
+        ></Link>
       </div>
       {/* menu entries on mobile within own window  */}
       {isMenuOpen && (
@@ -122,19 +129,28 @@ export default function Header() {
           </div>
           {/* social links within menu window */}
           <div className=" items-start text-3xl ml-4 mt-6 cursor-pointer ">
-            <a className="fa-solid fa-envelope pr-2"></a>
-            <a
+            <Link
+              href="mailto:riccardo.work.uk@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
+              className="fa-solid fa-envelope pr-2"
+            ></Link>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
               className="fa-brands fa-instagram px-2"
               href="https://www.instagram.com/_.riccardobarone._/"
-            ></a>
-            <a
+            ></Link>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
               className="fa-brands fa-linkedin px-2"
               href="https://www.linkedin.com/in/riccardo-barone/"
-            ></a>
-            <a
+            ></Link>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
               className="fa-brands fa-github"
               href="https://github.com/Riccardo105"
-            ></a>
+            ></Link>
           </div>
         </div>
       )}

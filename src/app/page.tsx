@@ -1,6 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 
 import ProfilePicture from "../../public/images/profile1cropped.png";
 import Basketball from "../../public/images/Basketball.jpg";
@@ -9,9 +11,9 @@ import CraneAI from "../../public/images/CraneAI.jpg";
 import NetworkSecurity from "../../public/images/NewtworkSecurity.webp";
 import Portfolio from "../../public/images/Portofolio.webp";
 
-import ProjectCarousel from "components/projectCarousel";
+const ProjectCarousel = dynamic(() => import("components/projectCarousel"));
 import { CarouselItem } from "components/projectCarousel";
-import ContactMeForm from "components/contactMeForm";
+const ContactMeForm = dynamic(() => import("components/contactMeForm"));
 
 // data for projects carousel
 
@@ -25,6 +27,7 @@ const Projects: CarouselItem[] = [
 
 export default function Home() {
   const myResume = "/files/CV.pdf";
+
   return (
     <div className="flex flex-col flex-grow ">
       <div className=" flex flex-col xl:flex-row justify-between  ">
@@ -59,6 +62,7 @@ export default function Home() {
           <Image
             src={ProfilePicture}
             alt="Profile Picture"
+            priority
             className="  mx-auto lg:w-[500px] lg:h-[700px] 2xl:w-[600px] 2xl:h-[800px] "
           />
           {/*dowload resume button on mobile*/}
@@ -73,19 +77,33 @@ export default function Home() {
 
         {/*links on desktop (on mobile are within header*/}
         <div className=" hidden xl:flex flex-grow-0 flex-col justify-center items-center w-auto text-3xl  ">
-          <a className="fa-solid fa-envelope my-4 mr-6 2xl:my-8 2xl:mr-12"></a>
-          <a
+          <Link
+            href="mailto:riccardo.work.uk@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
+            className=" relative group my-4 mr-6 2xl:my-8 2xl:mr-12 fa-solid fa-envelope"
+          >
+            <span className=" absolute right-full top-1/2 -translate-y-1/2 mr-1 hidden group-hover:inline-block bg-white text-black text-xs font-serif px-2 py-1 rounded shadow-md z-10  whitespace-nowrap">
+              default email app must be set up to use this link
+            </span>
+          </Link>
+
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
             className="fa-brands fa-instagram my-4 mr-6 2xl:my-8 2xl:mr-12"
             href="https://www.instagram.com/_.riccardobarone._/"
-          ></a>
-          <a
+          ></Link>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
             className="fa-brands fa-linkedin my-4 mr-6 2xl:my-8 2xl:mr-12"
             href="https://www.linkedin.com/in/riccardo-barone/"
-          ></a>
-          <a
+          ></Link>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
             className="fa-brands fa-github my-4 mr-6 2xl:my-8 2xl:mr-12"
             href="https://github.com/Riccardo105"
-          ></a>
+          ></Link>
         </div>
       </div>
 
@@ -106,8 +124,9 @@ export default function Home() {
             Professionally, I’m driven by the desire to create impactful
             solutions and explore how technology can innovate and transform
             industries. Outside of work and studies, I enjoy reading, playing
-            video games, basketball, and building custom PCs—activities that
-            challenge me creatively and physically.
+            video games, playing sports like basketball and volleyball, and
+            building custom PCs—activities that challenge me creatively and
+            physically.
           </p>
           <a
             className="justify-center text-center mt-6 w-56 mx-auto p-2 text-xl font-serif bg-white border-black border-2 rounded-xl "
@@ -120,7 +139,9 @@ export default function Home() {
           <h1 className=" text-start text-4xl mt-10  border-b-2 border-black">
             Contact me
           </h1>
-          <ContactMeForm />
+          <div className="mt-2">
+            <ContactMeForm />
+          </div>
         </div>
       </div>
 

@@ -48,13 +48,13 @@ export default function Page() {
             <span className="font-bold ml-1">
               Global Team Internship in Bali
             </span>
-            Global Team Internship in Bali, Indonesia, an immersive program
-            centered around Ubud Village. During this experience, I lived in Mas
-            Village, a small traditional community located 6 kilometers south of
-            Ubud, renowned for its intricate woodcarving artistry. The
-            internship aimed to support local businesses and charities by
-            developing practical and sustainable solutions to their challenges,
-            while also fostering cultural exchange and personal growth.
+            , Indonesia, an immersive program centered around Ubud Village.
+            During this experience, I lived in Mas Village, a small traditional
+            community located 6 kilometers south of Ubud, renowned for its
+            intricate woodcarving artistry. The internship aimed to support
+            local businesses and charities by developing practical and
+            sustainable solutions to their challenges, while also fostering
+            cultural exchange and personal growth.
           </p>
         </div>
 
@@ -75,15 +75,15 @@ export default function Page() {
             ></Image>
             <p className="text-start lg:w-1/2 lg:text-center">
               The Global Team Internship was organized by
-              <span className="font-bold ml-1"> Think Pacific </span>Think
-              Pacific, a non-profit organization that originally launched
-              international projects in Fiji and expanded into Indonesia in
-              2024. Think Pacific’s mission is to connect young people from
-              diverse cultures, enabling them to share, grow, and step out of
-              their comfort zones. Participants are welcomed into local
-              families, immersing themselves in a new culture while sharing
-              their own traditions. This creates an engaging environment where
-              everyone can grow individually and collectively, fostering mutual
+              <span className="font-bold ml-1"> Think Pacific </span>, a
+              non-profit organization that originally launched international
+              projects in Fiji and expanded into Indonesia in 2024. Think
+              Pacific’s mission is to connect young people from diverse
+              cultures, enabling them to share, grow, and step out of their
+              comfort zones. Participants are welcomed into local families,
+              immersing themselves in a new culture while sharing their own
+              traditions. This creates an engaging environment where everyone
+              can grow individually and collectively, fostering mutual
               understanding and collaboration.
             </p>
           </div>
@@ -140,7 +140,7 @@ export default function Page() {
                 push the boundaries of traditional printmaking and inspire
                 younger generations to engage with this art form.
               </p>
-              <p className="text-start mb-2 lg:text-center">
+              <p className="text-start mb-2 ">
                 During the internship, we developed strategies to increase the
                 business's recognition. These included:
               </p>
@@ -190,22 +190,24 @@ export default function Page() {
                 observe elderly artisans using traditional techniques and even
                 try their hand at pottery.
               </p>
-              <p className="text-start mb-2">
-                Our consultation focused on strategies to increase revenue and
-                brand reach. Key suggestions included:
-              </p>
-              <ul>
-                <li className="mb-1">- Launching a fundraising campaign.</li>
-                <li className="mb-1">
-                  - Establishing partnerships with prominent Balinese and
-                  Indonesian art universities
-                </li>
-                <li className="mb-1">
-                  - Participating in charity events, potentially reinvesting a
-                  portion of the fundraising profits to enhance the brand's
-                  reach and impact.
-                </li>
-              </ul>
+              <div className="text-start w-full ">
+                <p className="mb-2">
+                  Our consultation focused on strategies to increase revenue and
+                  brand reach. Key suggestions included:
+                </p>
+                <ul>
+                  <li className="mb-1">- Launching a fundraising campaign.</li>
+                  <li className="mb-1">
+                    - Establishing partnerships with prominent Balinese and
+                    Indonesian art universities
+                  </li>
+                  <li className="mb-1">
+                    - Participating in charity events, potentially reinvesting a
+                    portion of the fundraising profits to enhance the brand's
+                    reach and impact.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

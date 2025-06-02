@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../app/globals.css";
 import { StaticImageData } from "next/image";
+import Image from "next/image";
 
 // carousel item interface
 export interface CarouselItem {
@@ -60,9 +61,11 @@ export default function Carousel({ data }: CarouselProps) {
             }}
           >
             <div className="!w-full !max-w-sm !p-4 !bg-white !rounded-lg !shadow-md">
-              <img
+              <Image
                 src={data.image.src}
                 alt={data.title}
+                width={data.image.width}
+                height={data.image.height}
                 className="!w-full !h-48 !object-cover !rounded-t-lg"
               />
               <h3 className="!mt-2 !text-center !text-lg !font-semibold text-black">
