@@ -102,7 +102,7 @@ export default function Page() {
           <Image
             src={AboutMe}
             alt="AboutMe Picture"
-            className=" hidden  xl:max-h-full overflow-hidden object-contain  md:w-auto md:h-[600px] xl:block"
+            className=" hidden xl:max-h-full overflow-hidden object-contain  md:w-auto md:h-[600px] xl:block"
           ></Image>
         </div>
 
