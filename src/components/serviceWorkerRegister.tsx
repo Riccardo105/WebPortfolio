@@ -3,7 +3,8 @@ import { useEffect } from "react";
 
 export default function ServiceWorkerRegister() {
   useEffect(() => {
-    if ("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
+      // Register the service worker only in production environment
       navigator.serviceWorker
         .register("/serviceWorker.js")
         .then((registration) => {

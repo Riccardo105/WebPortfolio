@@ -1,4 +1,4 @@
-const CacheName = "v1";
+const CacheName = "v2";
 const CacheAssets = [
     "/",
     "/about",

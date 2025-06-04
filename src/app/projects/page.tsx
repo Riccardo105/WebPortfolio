@@ -18,10 +18,10 @@ interface ProjectsProps {
   overview: string;
   technologies: string;
   skillsLearnt: string;
-  linkType: string;
-  link?: string;
-  isLinkable: boolean;
-  fileName?: string;
+  isLinkable: boolean; // determines the appearance of the button
+  linkType?: string; // determines if projects leads to gitHub repo or file download
+  link?: string; // points to either the gitHub repo or the file to download
+  fileName?: string; // name with which the file will be downloaded
 }
 
 const Projects: ProjectsProps[] = [
@@ -34,9 +34,9 @@ const Projects: ProjectsProps[] = [
     technologies: "JavaScript, nodeJS, EJS, html, mongoDB, TailwindCSS",
     skillsLearnt:
       "Full-stack development, Progressive Web Apps, Database Management, API Development, MVC-pattern implementation, SSR (Server-Side Rendering), and user authentication",
-    linkType: "github",
-    link: "bla",
     isLinkable: true,
+    linkType: "github",
+    link: "https://github.com/Riccardo105/BasketballLearningPlatform",
   },
   {
     id: 2,
@@ -47,9 +47,9 @@ const Projects: ProjectsProps[] = [
     technologies: "React, Next.js, TypeScript, TailwindCSS ",
     skillsLearnt:
       "Advanced front-end development, responsive design, TypeScript integration, performance optimization, modern web development practices",
-    linkType: "github",
-    link: "bla",
     isLinkable: true,
+    linkType: "github",
+    link: "https://github.com/Riccardo105/WebPortfolio",
   },
 
   {
@@ -62,9 +62,9 @@ const Projects: ProjectsProps[] = [
       "Python, PDDL, A* algorithm, logistic regression, scikit-learn, and AI problem-solving frameworks",
     skillsLearnt:
       "AI problem-solving, search algorithms, logic-based AI design, machine learning model training, and data analysis using logistic regression",
-    linkType: "github",
-    link: "bla",
     isLinkable: true,
+    linkType: "github",
+    link: "https://github.com/Riccardo105/Artificial_Intelligence",
   },
   {
     id: 4,
@@ -75,22 +75,20 @@ const Projects: ProjectsProps[] = [
     technologies: "Packet tracer",
     skillsLearnt:
       "Network Security, AAA, site-to-site VPN, ACL, port security, Packet Tracer, local span and sniffer, L2 VLAN security",
-    linkType: "download",
     isLinkable: false,
-    fileName: "Network_Security_project",
   },
   {
     id: 5,
     title: "GiftWrappingService",
     image: GiftWrapping,
     overview:
-      "This was my first-ever project for my software design and development module. While relatively simple, it played a crucial role in helping me get accustomed to coding. The project is a service where users can customize the wrapping of a gift by selecting options such as dimensions, wrapping paper color, and additional extras like cards or bows. The program calculates a quote based on the required amount of paper and any additional features. To further my understanding of SQL databases, I also integrated a small SQLite database into the project. Although the project remains unfinished, it was an invaluable experience as my first step into programming.",
-    technologies: "Python, TKinter, UML, SQLite,",
+      "This was my first-ever project for my software design and development module. While relatively simple, it played a crucial role in helping me get accustomed to coding. The project is a service where users can customize the wrapping of a gift by selecting options such as dimensions, wrapping paper color, and additional extras like cards or bows. The program calculates a quote based on the required amount of paper and any additional features. althoug a fairly simple, one-file project, it was an invaluable experience as my first step into programming.",
+    technologies: "Python, TKinter, UML,",
     skillsLearnt:
-      " problem-solving, user interface creation, basic database management, principles of Software design and development",
-    linkType: "github",
-    link: "bla",
+      " problem-solving, user interface creation, principles of Software design and development, UML modeling, wireframing",
     isLinkable: true,
+    linkType: "github",
+    link: "https://github.com/Riccardo105/GiftWrappingService",
   },
 ];
 // set icon to buttons
@@ -157,12 +155,26 @@ export default function Page() {
                 href={project.link}
                 {...(project.isLinkable
                   ? {
-                      className : "rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center",
+                      className:
+                        "rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center",
+                      // make button download if linkType is download
+                      ...(project.linkType === "download"
+                        ? { download: project.fileName || true }
+                        : {}),
+
+                      // make link open in new tab if linkType is github
+                      ...(project.linkType === "github"
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {}),
                     }
                   : { className: "hidden" })}
               >
                 <i
-                  className={`mx-2 ${getIconForProject(project.linkType)}`}
+                  className={`mx-2 ${
+                    project.isLinkable && project.linkType
+                      ? getIconForProject(project.linkType)
+                      : ""
+                  }`}
                 ></i>
                 View Project
               </a>

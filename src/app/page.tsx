@@ -29,7 +29,7 @@ export default function Home() {
   const myResume = "/files/CV.pdf";
 
   return (
-    <div className="flex flex-col flex-grow ">
+    <div className="flex flex-col flex-grow font-serif">
       <div className=" flex flex-col xl:flex-row justify-between  ">
         <div className="flex flex-col flex-1 w-auto  font-serif text-start mt-10 xl:mt-0  ">
           {/*welcome message*/}
@@ -69,9 +69,9 @@ export default function Home() {
           <a
             href={myResume}
             download="Riccardo_Barone_cv"
-            className="flex xl:hidden flew-row justify-center w-56 mt-10 mx-auto p-2 text-xl font-serif rounded-xl bg-white border-2 border-black"
+            className=" text-lg flex xl:hidden flew-row justify-center w-56 mt-10 mx-auto p-2 md: lg:text-xl font-serif rounded-xl bg-white border-2 border-black"
           >
-            <i className=" fa-solid fa-download mx-2"></i> Download Resume
+            <i className=" fa-solid fa-download mx-2 "></i> Download Resume
           </a>
         </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
             physically.
           </p>
           <a
-            className="justify-center text-center mt-6 w-56 mx-auto p-2 text-xl font-serif bg-white border-black border-2 rounded-xl "
+            className=" text-lg justify-center text-center mt-6 w-56 mx-auto p-2 lg:text-xl font-serif bg-white border-black border-2 rounded-xl "
             href="/about"
           >
             Find out more

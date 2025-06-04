@@ -11,7 +11,7 @@ function MenuItems({ styling }: { styling: string }) {
   return (
     <ul className={styling}>
       <li
-        className="py-3 xl:px-6 "
+        className="py-3 xl:px-6 2xl:px-8 "
         onClick={() => {
           window.location.href = `/`;
         }}
@@ -19,7 +19,7 @@ function MenuItems({ styling }: { styling: string }) {
         Home
       </li>
       <li
-        className="py-3 xl:px-6"
+        className="py-3 xl:px-6 2xl:px-8"
         onClick={() => {
           window.location.href = `/about`;
         }}
@@ -27,7 +27,7 @@ function MenuItems({ styling }: { styling: string }) {
         About
       </li>
       <li
-        className="py-3 xl:px-6"
+        className="py-3 xl:px-6 2xl:px-8"
         onClick={() => {
           window.location.href = `/projects`;
         }}
@@ -35,20 +35,12 @@ function MenuItems({ styling }: { styling: string }) {
         My Projects
       </li>
       <li
-        className="py-3 xl:px-6"
+        className="py-3 xl:px-6 2xl:px-18"
         onClick={() => {
           window.location.href = `/contact`;
         }}
       >
         Contact
-      </li>
-      <li
-        className="py-3 xl:px-6"
-        onClick={() => {
-          window.location.href = `/services-`;
-        }}
-      >
-        Services
       </li>
     </ul>
   );
