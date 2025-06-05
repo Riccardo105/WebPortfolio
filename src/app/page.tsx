@@ -114,7 +114,7 @@ export default function Home() {
             About me
           </h1>
           <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-            Hi, I’m Riccardo Barone, a 23-year-old Italian currently living in
+            Hi, I’m Riccardo Barone, a 24-year-old Italian currently living in
             Winchester, UK. I began my career as a chef in Italy before moving
             to the UK to gain hands-on experience in hospitality. After several
             years in the industry, I decided to pursue my passion for technology

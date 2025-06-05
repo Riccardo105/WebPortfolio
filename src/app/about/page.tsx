@@ -50,8 +50,8 @@ export default function Page() {
               <span className="text-red-700 font-bold text-2xl ml-1">
                 Riccardo Barone
               </span>
-              , and if you’ve made it here, you already know the basics—I’m a
-              23-year-old Italian living in Winchester, UK, with a background in
+              , and if you’ve made it here, you already know the basics, I’m a
+              24-year-old Italian living in Winchester, UK, with a background in
               hospitality and a growing passion for technology. But let me take
               you a little deeper into my story.
             </p>
@@ -72,10 +72,10 @@ export default function Page() {
               power of personal growth and stepping outside my comfort zone. I
               thrive on activities that challenge me mentally and physically,
               from diving into thought-provoking books to strategizing in video
-              games or hitting the basketball court. I’m also passionate about
+              games or hitting the Volleybal court. I’m also passionate about
               finance and investing, as I see them as tools for achieving
               long-term freedom and flexibility. Building custom PCs is another
-              passion of mine—it’s where my love for technology meets hands-on
+              passion of mine, it’s where my love for technology meets hands-on
               creativity, and it’s a hobby that keeps me inspired and curious.
             </p>
             <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
