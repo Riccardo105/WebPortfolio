@@ -10,37 +10,25 @@ import Link from "next/link";
 function MenuItems({ styling }: { styling: string }) {
   return (
     <ul className={styling}>
-      <li
-        className="py-3 xl:px-6 2xl:px-8 "
-        onClick={() => {
-          window.location.href = `/`;
-        }}
-      >
-        Home
+      <li className="py-3 xl:px-6 2xl:px-8">
+        <a href="/" className="block w-full h-full">
+          Home
+        </a>
       </li>
-      <li
-        className="py-3 xl:px-6 2xl:px-8"
-        onClick={() => {
-          window.location.href = `/about`;
-        }}
-      >
-        About
+      <li className="py-3 xl:px-6 2xl:px-8">
+        <a href="/about" className="block w-full h-full">
+          About
+        </a>
       </li>
-      <li
-        className="py-3 xl:px-6 2xl:px-8"
-        onClick={() => {
-          window.location.href = `/projects`;
-        }}
-      >
-        My Projects
+      <li className="py-3 xl:px-6 2xl:px-8">
+        <a href="/projects" className="block w-full h-full">
+          My Projects
+        </a>
       </li>
-      <li
-        className="py-3 xl:px-6 2xl:px-18"
-        onClick={() => {
-          window.location.href = `/contact`;
-        }}
-      >
-        Contact
+      <li className="py-3 xl:px-6 2xl:px-8">
+        <a href="/contact" className="block w-full h-full">
+          Contact
+        </a>
       </li>
     </ul>
   );
