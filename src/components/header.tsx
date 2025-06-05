@@ -78,12 +78,16 @@ export default function Header() {
           onClick={HandleMenuState}
         ></i>
       </div>
-      {/* menu entries on desktop within main header */}
+      {/* menu entries on desktop within main header hides on mobile */}
       <div>
         <MenuItems styling=" flex-row text-2xl hidden  xl:flex cursor-pointer" />
       </div>
+      {/* social links on mobile within header, hides on desktop*/}
       <div className=" items-end text-3xl xl:pl-2 xl:hidden ">
-        <a className="fa-solid fa-envelope px-2 xl:px-4"></a>
+        <Link
+          className="fa-solid fa-envelope px-2 xl:px-4"
+          href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
+        ></Link>
         <Link
           target="_blank"
           rel="noopener noreferrer"
@@ -122,7 +126,7 @@ export default function Header() {
           {/* social links within menu window */}
           <div className=" items-start text-3xl ml-4 mt-6 cursor-pointer ">
             <Link
-              href="mailto:riccardo.work.uk@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
+              href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
               className="fa-solid fa-envelope pr-2"
             ></Link>
             <Link

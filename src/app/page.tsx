@@ -75,10 +75,10 @@ export default function Home() {
           </a>
         </div>
 
-        {/*links on desktop (on mobile are within header*/}
+        {/* social links on desktop (on mobile are within header*/}
         <div className=" hidden xl:flex flex-grow-0 flex-col justify-center items-center w-auto text-3xl  ">
           <Link
-            href="mailto:riccardo.work.uk@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
+            href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
             className=" relative group my-4 mr-6 2xl:my-8 2xl:mr-12 fa-solid fa-envelope"
           >
             <span className=" absolute right-full top-1/2 -translate-y-1/2 mr-1 hidden group-hover:inline-block bg-white text-black text-xs font-serif px-2 py-1 rounded shadow-md z-10  whitespace-nowrap">
