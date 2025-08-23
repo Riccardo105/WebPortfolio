@@ -125,7 +125,7 @@ export default function Home() {
             solutions and explore how technology can innovate and transform
             industries. Outside of work and studies, I enjoy reading, playing
             video games, playing sports like basketball and volleyball, and
-            building custom PCs—activities that challenge me creatively and
+            building custom PCs, activities that challenge me creatively and
             physically.
           </p>
           <a
