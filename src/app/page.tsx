@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 import ProfilePicture from "../../public/images/profile1cropped.png";
+import JavaOOP from "../../public/images/JavaOOP.jpg";
 import Basketball from "../../public/images/Basketball.jpg";
 import GiftWrapping from "../../public/images/GiftWrapping.jpeg";
 import CraneAI from "../../public/images/CraneAI.jpg";
@@ -24,14 +25,13 @@ const ContactMeForm = dynamic(() => import("components/contactMeForm"));
 // data for projects carousel
 
 const Projects: CarouselItem[] = [
-  { id: 1, title: "BasketballLearningPlatform", image: Basketball },
+  { id: 1, title: "Stock Management System", image: JavaOOP },
   { id: 2, title: "Web Portfolio", image: Portfolio },
-  { id: 3, title: "Crane AI", image: CraneAI },
-  { id: 4, title: "Network Security", image: NetworkSecurity },
-  { id: 5, title: "Gift Wrapping Service", image: GiftWrapping },
+  { id: 3, title: "BasketballLearningPlatform", image: Basketball },
+  { id: 4, title: "Crane AI", image: CraneAI },
+  { id: 5, title: "Network Security", image: NetworkSecurity },
+  { id: 6, title: "Gift Wrapping Service", image: GiftWrapping },
 ];
-
-
 
 export default function Home() {
   const myResume = "/files/CV.pdf";
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
         <div className=" flex flex-col 2xl:ml-3 2xl:flex-1 2xl:w-5/6">
           <h1 className=" text-start text-4xl mt-10  border-b-2 border-black">
-            Contact me
+            Work with me
           </h1>
           <div className="mt-2">
             <ContactMeForm />
