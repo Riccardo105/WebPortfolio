@@ -134,7 +134,7 @@ export default function Page() {
           </div>
 
           <div className="flex xl:ml-10  xl:flex-1 flex-col">
-            <h2 className="text-2xl mb-4 font-bold justify-center  hidden xl:flex">
+            <h2 className="text-2xl mb-4 font-bold justify-center text-center hidden xl:flex">
               {project.title}
             </h2>
             <h1 className="font-bold my-2 border-black border-b-2 ">
