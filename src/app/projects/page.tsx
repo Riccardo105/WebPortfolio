@@ -9,6 +9,12 @@ import GiftWrapping from "../../../public/images/GiftWrapping.jpeg";
 import CraneAI from "../../../public/images/CraneAI.jpg";
 import NetworkSecurity from "../../../public/images/NewtworkSecurity.webp";
 import Portfolio from "../../../public/images/Portofolio.webp";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Projects",
+  description: "A showcase of my projects",
+};
 
 // data for projects page
 interface ProjectsProps {

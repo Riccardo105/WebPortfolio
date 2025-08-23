@@ -3,6 +3,12 @@ import React from "react";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "homepage",
+  description: "My personal website",
+};
 
 import ProfilePicture from "../../public/images/profile1cropped.png";
 import Basketball from "../../public/images/Basketball.jpg";
@@ -24,6 +30,8 @@ const Projects: CarouselItem[] = [
   { id: 4, title: "Network Security", image: NetworkSecurity },
   { id: 5, title: "Gift Wrapping Service", image: GiftWrapping },
 ];
+
+
 
 export default function Home() {
   const myResume = "/files/CV.pdf";

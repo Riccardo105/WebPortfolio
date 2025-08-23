@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import ContactMeForm from "components/contactMeForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact me ",
+  description: "get in touch with me",
+};
 
 export default function Contact() {
   return (
