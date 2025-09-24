@@ -4,6 +4,11 @@ import AboutMe from "../../../public/images/aboutMe.jpg";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "about",
+  description: "find out more abotu me ",
+};
 
 const preprocessMarkdown = (markdown: string): string => {
   return markdown.replace(

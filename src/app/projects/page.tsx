@@ -4,6 +4,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect } from "react";
 
+import JavaOOP from "../../../public/images/JavaOOP.jpg";
 import Basketball from "../../../public/images/Basketball.jpg";
 import GiftWrapping from "../../../public/images/GiftWrapping.jpeg";
 import CraneAI from "../../../public/images/CraneAI.jpg";
@@ -27,17 +28,18 @@ interface ProjectsProps {
 const Projects: ProjectsProps[] = [
   {
     id: 1,
-    title: "BasketBallLearningPlatform",
-    image: Basketball,
+    title: "Stock Management System",
+    image: JavaOOP,
     overview:
-      "The Basketball Learning Platform is a Progressive Web App (PWA) developed as part of my web development module. Designed as a training hub for basketball enthusiasts, it provides a variety of exercises to help users enhance their skills. Users can create personalized accounts to track completed exercises and monitor their progress over time. The app leverages server-side rendering (SSR) for improved performance and is integrated with a MongoDB database to ensure a seamless and dynamic user experience. As a PWA, it offers the added convenience of being installable on mobile devices, making it easily accessible for on-the-go training.",
-    technologies: "JavaScript, nodeJS, EJS, html, mongoDB, TailwindCSS",
+      "Developed a Stock Management System as part of my Object-Oriented Programming module. This was my first experience using Java and Object-Oriented Programming, building on concepts from earlier coding modules. The system followed modular architecture with design patterns such as DTO, DAO, and Service Layer. I also integrated Hibernate for ORM-based database interactions and hosted the database using Aiven for reliable cloud persistence.",
+    technologies: "Java, Hibernate (ORM), MySQL, Aiven, IntelliJ IDEA",
     skillsLearnt:
-      "Full-stack development, Progressive Web Apps, Database Management, API Development, MVC-pattern implementation, SSR (Server-Side Rendering), and user authentication",
+      "Object-Oriented Programming principlle, DTO-DAO design pattern, Service Layer design pattern, MVC architecture, ORM with Hibernate, Database hosting with Aiven, Modular software architecture",
     isLinkable: true,
     linkType: "github",
-    link: "https://github.com/Riccardo105/BasketballLearningPlatform",
+    link: "https://github.com/Riccardo105/StockManagmentSystem",
   },
+
   {
     id: 2,
     title: "Web Portfolio",
@@ -54,6 +56,20 @@ const Projects: ProjectsProps[] = [
 
   {
     id: 3,
+    title: "BasketBallLearningPlatform",
+    image: Basketball,
+    overview:
+      "The Basketball Learning Platform is a Progressive Web App (PWA) developed as part of my web development module. Designed as a training hub for basketball enthusiasts, it provides a variety of exercises to help users enhance their skills. Users can create personalized accounts to track completed exercises and monitor their progress over time. The app leverages server-side rendering (SSR) for improved performance and is integrated with a MongoDB database to ensure a seamless and dynamic user experience. As a PWA, it offers the added convenience of being installable on mobile devices, making it easily accessible for on-the-go training.",
+    technologies: "JavaScript, nodeJS, EJS, html, mongoDB, TailwindCSS",
+    skillsLearnt:
+      "Full-stack development, Progressive Web Apps, Database Management, API Development, MVC-pattern implementation, SSR (Server-Side Rendering), and user authentication",
+    isLinkable: true,
+    linkType: "github",
+    link: "https://github.com/Riccardo105/BasketballLearningPlatform",
+  },
+
+  {
+    id: 4,
     title: "Crane AI",
     image: CraneAI,
     overview:
@@ -67,7 +83,7 @@ const Projects: ProjectsProps[] = [
     link: "https://github.com/Riccardo105/Artificial_Intelligence",
   },
   {
-    id: 4,
+    id: 5,
     title: "Network Security",
     image: NetworkSecurity,
     overview:
@@ -78,7 +94,7 @@ const Projects: ProjectsProps[] = [
     isLinkable: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "GiftWrappingService",
     image: GiftWrapping,
     overview:
@@ -91,6 +107,7 @@ const Projects: ProjectsProps[] = [
     link: "https://github.com/Riccardo105/GiftWrappingService",
   },
 ];
+
 // set icon to buttons
 function getIconForProject(linkType: string) {
   switch (linkType) {
@@ -134,7 +151,7 @@ export default function Page() {
           </div>
 
           <div className="flex xl:ml-10  xl:flex-1 flex-col">
-            <h2 className="text-2xl mb-4 font-bold justify-center  hidden xl:flex">
+            <h2 className="text-2xl mb-4 font-bold justify-center text-center hidden xl:flex">
               {project.title}
             </h2>
             <h1 className="font-bold my-2 border-black border-b-2 ">

@@ -19,6 +19,13 @@ import BHG3 from "../../../public/images/Bali/BHG3.jpg";
 import BHG4 from "../../../public/images/Bali/BHG4.jpg";
 import BHG5 from "../../../public/images/Bali/BHG5.jpg";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "volounteering in Bali",
+  description: "my experience with Think Pacific in Bali",
+};
+
 const Membumi: StaticImageData[] = [
   membumi1,
   membumi2,

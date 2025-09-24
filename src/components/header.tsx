@@ -26,8 +26,8 @@ function MenuItems({ styling }: { styling: string }) {
         </a>
       </li>
       <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/contact" className="block w-full h-full">
-          Contact
+        <a href="/work" className="block w-full h-full">
+          Work with me
         </a>
       </li>
     </ul>
