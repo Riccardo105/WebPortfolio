@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import ContactMeForm from "components/contactMeForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "work with me ",
+  description: "get in touch for work inquiries",
+};
 
 export default function Contact() {
   return (
@@ -53,7 +59,7 @@ export default function Contact() {
 
       <div className="mt-4">
         <p className="border-b-2 border-black mb-2 text-lg font-bold">
-          Send me a messagge
+          Send me a enquiry
         </p>
         <ContactMeForm />
       </div>
