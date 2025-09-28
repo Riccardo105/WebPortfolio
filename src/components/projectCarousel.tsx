@@ -10,7 +10,7 @@ import Image from "next/image";
 export interface CarouselItem {
   id: number;
   title: string;
-  image: StaticImageData;
+  image: string;
 }
 // define that carousel props must be an array of carousel items
 interface CarouselProps {
@@ -62,10 +62,8 @@ export default function Carousel({ data }: CarouselProps) {
           >
             <div className="!w-full !max-w-sm !p-4 !bg-white !rounded-lg !shadow-md">
               <Image
-                src={data.image.src}
+                src={data.image}
                 alt={data.title}
-                width={data.image.width}
-                height={data.image.height}
                 className="!w-full !h-48 !object-cover !rounded-t-lg"
               />
               <h3 className="!mt-2 !text-center !text-lg !font-semibold text-black">

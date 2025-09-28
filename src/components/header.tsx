@@ -1,6 +1,10 @@
 "use client";
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoArrowBack } from "react-icons/io5";
+import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { SiInstagram } from "react-icons/si";
 
 <link
   rel="stylesheet"
@@ -10,25 +14,25 @@ import Link from "next/link";
 function MenuItems({ styling }: { styling: string }) {
   return (
     <ul className={styling}>
-      <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/" className="block w-full h-full">
+      <li className="py-2 xl:px-6 2xl:px-8">
+        <Link href="/" className="block w-full h-full hover:scale-110">
           Home
-        </a>
+        </Link>
       </li>
       <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/about" className="block w-full h-full">
+        <Link href="/about" className="block w-full h-full hover:scale-110">
           About
-        </a>
+        </Link>
       </li>
       <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/projects" className="block w-full h-full">
+        <Link href="/projects" className="block w-full h-full hover:scale-110">
           My Projects
-        </a>
+        </Link>
       </li>
       <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/contact" className="block w-full h-full">
+        <Link href="/contact" className="block w-full h-full hover:scale-110">
           Contact
-        </a>
+        </Link>
       </li>
     </ul>
   );
@@ -58,83 +62,100 @@ export default function Header() {
   }
 
   return (
-    <header className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6 font-serif">
+    <header className="pt-4 px-4 pb-1 xl:mt-6 flex justify-between xl:justify-center  multi-cyan-gradient font-sans text-white">
       {/* burger menu icon, disappear on deskop as entries are shown in main header */}
       <div className="items-start xl:hidden">
-        <i
-          className="fa-solid fa-bars text-3xl xl:hidden"
-          onClick={HandleMenuState}
-        ></i>
+        <i className=" text-3xl xl:hidden" onClick={HandleMenuState}>
+          <GiHamburgerMenu />
+        </i>
       </div>
-      {/* menu entries on desktop within main header hides on mobile */}
+      {/* the menu entries are within main header on destop. this hides on mobile */}
       <div>
-        <MenuItems styling=" flex-row text-2xl hidden  xl:flex cursor-pointer" />
+        <MenuItems styling=" flex-row text-3xl hidden  xl:flex cursor-pointer" />
       </div>
-      {/* social links on mobile within header, hides on desktop*/}
-      <div className=" items-end text-3xl xl:pl-2 xl:hidden ">
-        <Link
-          className="fa-solid fa-envelope px-2 xl:px-4"
+      {/* on mobile social media links replace menu entries*/}
+      <div className="flex  items-center flex-row text-3xl xl:pl-2 xl:hidden ">
+        <a
+          className="px-2"
           href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
-        ></Link>
-        <Link
+        >
+          <FaEnvelope />
+        </a>
+        <a
           target="_blank"
           rel="noopener noreferrer"
-          className="fa-brands fa-instagram px-2 xl:px-4"
+          className="px-2"
           href="https://www.instagram.com/_.riccardobarone._/"
-        ></Link>
-        <Link
+        >
+          <SiInstagram />
+        </a>
+        <a
           target="_blank"
           rel="noopener noreferrer"
-          className="fa-brands fa-linkedin px-2 xl:px-4"
+          className="px-2"
           href="https://www.linkedin.com/in/riccardo-barone/"
-        ></Link>
-        <Link
+        >
+          <FaLinkedin />
+        </a>
+        <a
           target="_blank"
           rel="noopener noreferrer"
-          className="fa-brands fa-github xl:px-4"
+          className="px-2"
           href="https://github.com/Riccardo105"
-        ></Link>
+        >
+          <FaGithub />
+        </a>
       </div>
       {/* menu entries on mobile within own window  */}
       {isMenuOpen && (
         <div
           ref={MenuRef}
-          className="BurgerMenu fixed top-0 left-0 w-full h-screen bg-custom-pearl bg-opacity-100 flex p-6 flex-col z-50 motion-translate-y-in-100 motion-duration-1000"
+          className="BurgerMenu fixed top-0 left-0 w-full h-screen bg-opacity-100 multi-cyan-gradient flex p-6 flex-col z-50 motion-translate-y-in-100 motion-duration-1000"
         >
           <div className="flex flex-row justify-between w-full overflow-hidden cursor-pointer">
             <MenuItems styling="mt-14 ml-4 text-3xl" />
             <i
-              className="fa-solid fa-arrow-left text-2xl mt-10 "
+              className="text-2xl mt-16 w-fit"
               onClick={() => {
                 HandleExitingAnimation(); // Call the exiting animation function
                 HandleMenuState(); // Call the menu state function
               }}
-            ></i>
+            >
+              <IoArrowBack className="w-8 h-8 " />
+            </i>
           </div>
           {/* social links within menu window */}
-          <div className=" items-start text-3xl ml-4 mt-6 cursor-pointer ">
-            <Link
+          <div className=" flex flex-row items-start text-3xl ml-4 mt-6 cursor-pointer ">
+            <a
+              className="px-2"
               href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
-              className="fa-solid fa-envelope pr-2"
-            ></Link>
-            <Link
+            >
+              <FaEnvelope />
+            </a>
+            <a
               target="_blank"
               rel="noopener noreferrer"
-              className="fa-brands fa-instagram px-2"
+              className="px-2"
               href="https://www.instagram.com/_.riccardobarone._/"
-            ></Link>
-            <Link
+            >
+              <SiInstagram />
+            </a>
+            <a
               target="_blank"
               rel="noopener noreferrer"
-              className="fa-brands fa-linkedin px-2"
+              className="px-2"
               href="https://www.linkedin.com/in/riccardo-barone/"
-            ></Link>
-            <Link
+            >
+              <FaLinkedin />
+            </a>
+            <a
               target="_blank"
               rel="noopener noreferrer"
-              className="fa-brands fa-github"
+              className="px-2"
               href="https://github.com/Riccardo105"
-            ></Link>
+            >
+              <FaGithub />
+            </a>
           </div>
         </div>
       )}

@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        "custom-pearl": "#F9F8F8",
+        "custom-cyan": "#0d729e",
         'custom-grey': "#1B1B1B",
         background: "var(--background)",
         foreground: "var(--foreground)",

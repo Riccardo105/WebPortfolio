@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-row items-start font-serif">
+    <footer className="flex flex-row items-start font-serif mt-16">
       <p className="p-2">All rights reserved {"\u00A9"} 2025 Riccardo Barone</p>
 
       <div className="flex flex-row p-2 ml-4">

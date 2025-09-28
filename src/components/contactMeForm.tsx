@@ -76,7 +76,7 @@ export default function ContactMeForm() {
           name="name"
           placeholder="Name"
           required
-          className=" w-full h-12 p-2 my-2 border-2 border-gray-300 text-black rounded-lg xl:w-1/2"
+          className=" w-full h-12 p-2 my-2 border-2 border-gray-300 text-black rounded-lg shadow-md xl:w-1/2"
         />
         <input
           type="email"
