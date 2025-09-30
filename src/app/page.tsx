@@ -1,28 +1,17 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
 import dynamic from "next/dynamic";
 import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
-
 import FeatureBlock from "components/feature";
 import { Feature } from "components/feature";
 
-const features: Feature[] = [
-  {
-    title: "Responsive Design",
-    text: "Your website will look and work perfectly on every device. I build layouts that adapt seamlessly from mobile to desktop using modern CSS and React breakpoints, so your visitors always get the best experience.",
-  },
-  {
-    title: "Custom CMS",
-    text: "Update your content without touching code. I create easy-to-use content management systems tailored to your workflow, so you can manage your site exactly how you want.",
-  },
-  {
-    title: "PWA Integration",
-    text: "Turn your website into an installable app with offline support. Your site won’t just be a website — it’ll behave like a modern web app, giving users fast and reliable access anytime, anywhere.",
-  },
-];
-
+const career: Feature = {
+  title: "Who am I?",
+  text: "Explore my journey as a computer science student and aspiring software engineer. This section highlights my academic achievements, technical skills, and the projects that demonstrate my commitment to continuous learning and development.",
+};
 export default function Home() {
   const myResume = "/files/CV.pdf";
 
@@ -40,16 +29,11 @@ export default function Home() {
                 Riccardo Barone
               </h1>
               <h2 className=" mx-2 mt-2 text-lg xl:mb-4 xl:ml-0">
-                Freelance Web Developer & Software Engineer passionate about
-                creating clean, responsive, and secure web applications. I help
-                businesses and entrepreneurs bring their ideas to life online,
-                from custom websites to full-stack solutions tailored to your
-                needs.
+                Computer Science student and software engineer with a passion
+                for building clean, responsive, and efficient applications. I
+                enjoy developing web solutions, exploring artificial
+                intelligence, and creating secure, scalable software systems.
               </h2>
-
-              <button className="hidden xl:block rounded-full bg-[#054870] text-white mt-1 p-3 transform transition-transform duration-300 ease-in-out hover:scale-110">
-                Let's build something impactful together
-              </button>
             </div>
           </div>
 
@@ -123,43 +107,56 @@ export default function Home() {
         </div>
       </div>
 
-      {/* features I offer block */}
-      <div className="flex flex-col w-full justify-center bg-[#f0f0f0] font-sans font-semibold ">
-        <button className="xl:hidden w-fit mx-auto mb-8 rounded-full bg-[#054870] text-white mt-1 p-3 transform transition-transform duration-300 ease-in-out hover:scale-110">
-          Let's build something impactful together
-        </button>
+      {/* Carrer section */}
+      <div className="w-full bg-[#f0f0f0]">
+        <div className=" flex flex-col xl:w-[60%] mx-auto py-10">
+          <h2 className="mx-1 relative text-center font-normal text-[#0B6B9E] text-5xl mt-8 pb-12 xl:w-2/3 xl:mx-auto motion-preset-slide-down-lg motion-duration-1200 ease-out">
+            My Career
+          </h2>
 
-        <h2 className=" mx-1 relative text-center font-normal text-[#0B6B9E] text-5xl mt-8 pb-12 xl:w-2/3 xl:mx-auto motion-preset-slide-down-lg motion-duration-1200 ease-out">
-          Boost your online presence
-          <svg
-            className="absolute left-1/2 -bottom-2 w-full max-w-xs -translate-x-1/2 motion-preset-slide-down-lg motion-duration-1200 motion-delay-500 ease-out "
-            viewBox="0 0 100 10"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0 5 Q25 0 50 5 T100 5"
-              stroke="#F59E0B"
-              strokeWidth="1"
-              fill="transparent"
-            />
-          </svg>
-        </h2>
+          <div className="flex flex-col px-2 xl:flex-row xl:w-4/5 mx-auto items-center justify-center gap-8">
+            {/* Image wrapper */}
+            <div className="w-full xl:w-1/2 overflow-hidden">
+              <motion.img
+                src="/images/Career.jpg"
+                alt="career image"
+                className="rounded-xl shadow-lg w-full"
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+              />
+            </div>
 
-        {features.map((feature, i) => (
-          <div
-            key={i}
-            className={`flex  xl:w-[45%] xl:mx-auto mt-16 mx-3 pb-8 ${
-              i % 2 === 0 ? "justify-start" : "justify-end"
-            } xl:w-[35%]`}
-          >
-            {/* determine direction of slide in based on key */}
-            <FeatureBlock
-              feature={feature}
-              direction={i % 2 === 0 ? "left" : "right"}
-            />
+            {/* FeatureBlock wrapper */}
+            <div className="w-full xl:w-1/2 flex flex-col text-center xl:items-center">
+              <motion.div
+                className="relative w-full"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ duration: 1.5, ease: "easeOut", delay: 0.6 }}
+              >
+                <h3 className="text-3xl font-bold text-[#1A93C1]">Who am I?</h3>
+
+                <p className="text-lg font-semibold mt-2 mx-4 text-gray-700 py-3">
+                  Explore my journey as a computer science student and aspiring
+                  software engineer. This section highlights my academic
+                  achievements, technical skills, and the projects that
+                  demonstrate my commitment to continuous learning and
+                  development.
+                </p>
+
+                <button className="rounded-2xl bg-[#0B6B9E] text-white font-semibold w-fit p-2 hover:scale-110 mx-auto">
+                  find out more about me
+                </button>
+              </motion.div>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
+
+      <div className="py-40"></div>
     </div>
   );
 }
