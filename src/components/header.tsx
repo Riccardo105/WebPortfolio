@@ -1,140 +1,112 @@
 "use client";
-import { useState, useRef } from "react";
-import Link from "next/link";
-
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-></link>;
+import { useState, useRef, useEffect } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function MenuItems({ styling }: { styling: string }) {
   return (
-    <ul className={styling}>
-      <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/" className="block w-full h-full">
-          Home
-        </a>
-      </li>
-      <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/about" className="block w-full h-full">
-          About
-        </a>
-      </li>
-      <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/projects" className="block w-full h-full">
-          My Projects
-        </a>
-      </li>
-      <li className="py-3 xl:px-6 2xl:px-8">
-        <a href="/work" className="block w-full h-full">
-          Work with me
-        </a>
-      </li>
-    </ul>
+    <nav className={styling}>
+      <a href="/" className="hover:text-slate-900 transition-colors">
+        Home
+      </a>
+      <a href="/about" className="hover:text-slate-900 transition-colors">
+        About
+      </a>
+      <a href="/projects" className="hover:text-slate-900 transition-colors">
+        Projects
+      </a>
+      <a href="/contact" className="hover:text-slate-900 transition-colors">
+        Contact
+      </a>
+    </nav>
+  );
+}
+
+function SocialLinks({ styling }: { styling: string }) {
+  return (
+    <div className={styling}>
+      <a
+        href="https://github.com/Riccardo105"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-slate-600 hover:text-slate-900 transition-colors"
+      >
+        GitHub
+      </a>
+      <a
+        href="https://www.linkedin.com/in/riccardo-barone/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-slate-600 hover:text-slate-900 transition-colors"
+      >
+        LinkedIn
+      </a>
+    </div>
   );
 }
 
 export default function Header() {
-  const [isMenuOpen, SetMenuState] = useState(false);
-  const MenuRef = useRef<HTMLDivElement | null>(null);
+  const [isMenuOpen, setMenuState] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
-  function HandleMenuState() {
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
     if (isMenuOpen) {
-      // If the menu is open, apply the timeout to close it
-      setTimeout(() => {
-        SetMenuState(false); // Close the menu after the timeout
-      }, 1000); // Adjust the timeout duration according to the animation duration
+      // Start exit animation
+      if (menuRef.current) {
+        menuRef.current.classList.add("motion-translate-y-out-100");
+      }
+      setTimeout(() => setMenuState(false), 500); // Matches animation duration
     } else {
-      // If the menu is closed, immediately open it
-      SetMenuState(true);
+      setMenuState(true);
     }
-  }
-
-  function HandleExitingAnimation() {
-    if (MenuRef.current) {
-      // Apply slide-out animation on back arrow click
-      MenuRef.current.classList.add("motion-translate-y-out-100");
-    }
-  }
+  };
 
   return (
-    <header className="pt-4 px-4 pb-1 flex justify-between xl:justify-end xl:w-11/12 2xl:w-5/6 font-serif">
-      {/* burger menu icon, disappear on deskop as entries are shown in main header */}
-      <div className="items-start xl:hidden">
-        <i
-          className="fa-solid fa-bars text-3xl xl:hidden"
-          onClick={HandleMenuState}
-        ></i>
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-100">
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Burger menu icon */}
+        <div className="md:hidden">
+          <GiHamburgerMenu
+            className="text-2xl cursor-pointer"
+            onClick={toggleMenu}
+          />
+        </div>
+
+        <div className="font-semibold text-lg tracking-tight">Riccardo</div>
+
+        {/* Desktop menu - Hidden on mobile */}
+        <MenuItems styling="hidden md:flex items-center space-x-8 text-xl font-medium text-slate-600" />
+
+        {/* Desktop Socials */}
+        <SocialLinks styling="sm:flex items-center space-x-4  text-md md:text-lg font-medium" />
       </div>
-      {/* menu entries on desktop within main header hides on mobile */}
-      <div>
-        <MenuItems styling=" flex-row text-2xl hidden  xl:flex cursor-pointer" />
-      </div>
-      {/* social links on mobile within header, hides on desktop*/}
-      <div className=" items-end text-3xl xl:pl-2 xl:hidden ">
-        <Link
-          className="fa-solid fa-envelope px-2 xl:px-4"
-          href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
-        ></Link>
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fa-brands fa-instagram px-2 xl:px-4"
-          href="https://www.instagram.com/_.riccardobarone._/"
-        ></Link>
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fa-brands fa-linkedin px-2 xl:px-4"
-          href="https://www.linkedin.com/in/riccardo-barone/"
-        ></Link>
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fa-brands fa-github xl:px-4"
-          href="https://github.com/Riccardo105"
-        ></Link>
-      </div>
-      {/* menu entries on mobile within own window  */}
+
+      {/* Mobile fullscreen menu */}
       {isMenuOpen && (
         <div
-          ref={MenuRef}
-          className="BurgerMenu fixed top-0 left-0 w-full h-screen bg-custom-pearl bg-opacity-100 flex p-6 flex-col z-50 motion-translate-y-in-100 motion-duration-1000"
+          ref={menuRef}
+          className="fixed inset-0 w-full h-screen bg-white z-[60] flex flex-col p-8 motion-translate-y-in-100 motion-duration-500"
         >
-          <div className="flex flex-row justify-between w-full overflow-hidden cursor-pointer">
-            <MenuItems styling="mt-14 ml-4 text-3xl" />
-            <i
-              className="fa-solid fa-arrow-left text-2xl mt-10 "
-              onClick={() => {
-                HandleExitingAnimation(); // Call the exiting animation function
-                HandleMenuState(); // Call the menu state function
-              }}
-            ></i>
+          <div className="flex justify-end">
+            {/* Back/Close Arrow */}
+            <button onClick={toggleMenu} className="text-xl p-2">
+              <i className="fa-solid fa-arrow-left"></i>
+            </button>
           </div>
-          {/* social links within menu window */}
-          <div className=" items-start text-3xl ml-4 mt-6 cursor-pointer ">
-            <Link
-              href="mailto:riccardo@riccardobarone.dev?subject=Contact%20from%20Portfolio&body=Hi%20Riccardo%2C%0A"
-              className="fa-solid fa-envelope pr-2"
-            ></Link>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa-brands fa-instagram px-2"
-              href="https://www.instagram.com/_.riccardobarone._/"
-            ></Link>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa-brands fa-linkedin px-2"
-              href="https://www.linkedin.com/in/riccardo-barone/"
-            ></Link>
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa-brands fa-github"
-              href="https://github.com/Riccardo105"
-            ></Link>
+
+          <div className="flex flex-col h-full items-center justify-between">
+            <MenuItems styling="flex flex-col gap-8 text-lg  mt-10 text-slate-600" />
+
+            <div className="pb-12 border-t border-slate-100 pt-8">
+              <SocialLinks styling="flex space-x-8 text-xl text-slate-600" />
+            </div>
           </div>
         </div>
       )}

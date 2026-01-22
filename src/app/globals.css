@@ -7,12 +7,6 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   color: var(--foreground);
@@ -41,3 +35,15 @@ body {
   color: black !important; /* Change the color of the dots */
   
  }
+
+ .multi-cyan-gradient {
+  background: linear-gradient(
+    to right,
+    #67D8E0,
+    #3CB5D8,
+    #1A93C1,
+    #0B6B9E,
+    #054870
+  );
+}
+
