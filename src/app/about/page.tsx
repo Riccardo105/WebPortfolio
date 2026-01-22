@@ -1,138 +1,176 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
-import AboutMe from "../../../public/images/aboutMe.jpg";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "about",
-  description: "find out more abotu me ",
+  title: "About | Riccardo Barone",
+  description:
+    "Final-year Computer Science student with a background in leadership and a passion for secure, scalable technology.",
 };
 
-const preprocessMarkdown = (markdown: string): string => {
-  return markdown.replace(
-    /- \*\*(.*?)\*\* :/g,
-    (match: string, p1: string): string => {
-      // Only wrap the header part in a span with custom styles, leaving the rest as it is
-      return `- <span className="text-red-700 font-bold text-xl ml-1">${p1}</span> :`;
-    }
-  );
-};
+const skillCategories = [
+  {
+    title: "Software Engineering",
+    skills: [
+      "Java (OOP)",
+      "Python",
+      "Unified Modelling Language",
+      "Design Patterns (MVC, DAO/DTO)",
+      "AI Logic Agents (A*)",
+    ],
+    description: "Modular development and architectural design patterns.",
+  },
+  {
+    title: "Web & Full-Stack",
+    skills: ["React", "Next.js", "TypeScript", "Node.js", "PWA", "TailwindCSS"],
+    description: "Responsive front-end and performant server-side rendering.",
+  },
+  {
+    title: "Networking",
+    skills: [
+      "Network Design",
+      "Layer 3 routing",
+      "VPNs (Site-to-Site)",
+      "VLAN Security",
+    ],
+    description: "Architecting and securing distributed network topologies.",
+  },
+  {
+    title: "Cyber Security",
+    skills: [
+      "Penetration Testing",
+      "Cyber Security Principles",
+      "OSI Model",
+      "Risk Management",
+    ],
+    description: "Security auditing and the penetration testing lifecycle.",
+  },
+  {
+    title: "Data Systems",
+    skills: [
+      "SQL & NoSQL",
+      "Relational Design (Normalization)",
+      "Hibernate (ORM)",
+      "MongoDB & Mongoose",
+      "MySQL",
+    ],
+    description: "Schema architecture and efficient data persistence.",
+  },
+  {
+    title: "Data Science & Insights",
+    skills: [
+      "Inferential Statistics (T-Tests)",
+      "Association Rule Mining",
+      "Mediation Analysis",
+      "Data Visualization",
+      "Correlation Analysis",
+    ],
+    description: "Extracting actionable insights through statistical modeling.",
+  },
+];
 
-const markdownContent = `
-- **Software Design & Development** : Proficient in **Python**, with experience in software development lifecycles, **UML diagrams**, and user-centered design.
-- **Web Development** : Skilled in **full-stack development** and **progressive web apps** (PWA). Built projects using **Node.js** with **JavaScript** and **Next.js** with **React** + **TypeScript**.
-- **Database Management** : Experience with **relational databases**, **SQL**, **normalization principles**, and **data integrity**. Worked with, **document-based databases** using **MongoDB** (NoSQL) for web development projects.
-- **Cybersecurity** : Understanding of **OSI model**, **CIA triad**, **cryptographic tools**, **risk assessment**, and **security policies**.
-- **Network Security** : Applied knowledge in **Packet Tracer** to secure various network topologies. Configured device security, **server-based AAA**. Implemented **Access Control List**, **port security**, **L2 VLAN security**, and **site-to-site VPNs**. Set up local SPAN and sniffer for network monitoring.
-- **Data Structures & Operating Systems** : Strong grasp of **data structures**, **algorithms**, and **binary algebra**. Knowledge of **operating systems**, including **processes**, **threads**, and **memory management**.
-- **AI & Machine Learning** : Coded a simple AI agent in Python using the **A-star algorithm**. Trained a **machine learning model** using **logistic regression**. Familiar with **intelligent agents**, **search algorithms**, and **supervised learning**.
-- **Object-Oriented Software Development** : Proficient in **Java**, with a strong grasp of **OOP principles**. Applied design patterns like **DTO**, **DAO**, and **Service Layer** for modular architecture. Experience with **Hibernate** for ORM-based database interactions and efficient data persistence.
-`;
-
-export default function Page() {
-  const processedMarkdown = preprocessMarkdown(markdownContent);
-
-  // Split the markdown by line breaks into individual list items
-  const markdownLines = processedMarkdown.split("\n");
-
+export default function AboutPage() {
   return (
-    <div className="flex flex-col  w-full items-center font-serif ">
-      <div className="flex flex-col mx-auto p-auto xl:w-11/12 2xl:w-5/6 2xl:flex-1 2xl:mr-3 xl:mx-0 ">
-        <div className="flex flex-col items-center justify-center mx-4 xl:flex-row xl:w-11/12 xl:justify-between md:mt-4 xl:mt-20 ">
-          <Image
-            src={AboutMe}
-            alt="AboutMe Picture"
-            className="max-w-full overflow-hidden  md:w-auto md:h-[800px] xl:hidden flex-1"
-          ></Image>
-          <div className="flex flex-col items-center justify-center mx-4 flex-1 md:mx-12 ">
-            <h1 className="text-start w-full mx-auto mt-10 text-4xl  border-b-2 border-black ">
-              Who am I?
-            </h1>
-            <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-              Hi, I’m
-              <span className="text-red-700 font-bold text-2xl ml-1">
-                Riccardo Barone
-              </span>
-              , and if you’ve made it here, you already know the basics, I’m a
-              24-year-old Italian living in Winchester, UK, with a background in
-              hospitality and a growing passion for technology. But let me take
-              you a little deeper into my story.
-            </p>
-            <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-              My journey from chef to computer science student has been anything
-              but conventional. Starting as a commis chef and progressing to
-              junior sous chef, I developed skills in discipline, creativity,
-              adaptability, leadership, and problem-solving. These qualities,
-              along with my current experience as a part-time chef at a nursing
-              home, continue to shape my approach to technology. Now in my
-              second year of a Computer Science degree, I’m focused on
-              leveraging technology to solve real-world problems and drive
-              innovation, combining my diverse experiences to push boundaries in
-              new ways.
-            </p>
-            <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-              Beyond my professional aspirations, I’m a firm believer in the
-              power of personal growth and stepping outside my comfort zone. I
-              thrive on activities that challenge me mentally and physically,
-              from diving into thought-provoking books to strategizing in video
-              games or hitting the Volleybal court. I’m also passionate about
-              finance and investing, as I see them as tools for achieving
-              long-term freedom and flexibility. Building custom PCs is another
-              passion of mine, it’s where my love for technology meets hands-on
-              creativity, and it’s a hobby that keeps me inspired and curious.
-            </p>
-            <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-              One of the most transformative experiences of my life was
-              <span className="mx-1">
-                <a className="text-blue-500" href="/Volounteering_in_Bali">
-                  volunterring in Bali
-                </a>
-              </span>
-              with Think Pacific (as seen in the photo). The time there allowed
-              me to immerse myself in a new culture, contribute to meaningful
-              projects, and grow as an individual. It reinforced my belief in
-              the importance of adaptability, cultural understanding, and
-              embracing new perspectives—values I carry with me every day.
-            </p>
-            <p className="mt-4 mx-auto text-center font-serif 2xl:text-start">
-              Looking ahead, I’m excited to continue growing as a technologist,
-              exploring areas like artificial intelligence, cybersecurity, and
-              full-stack development. I’m eager to collaborate with like-minded
-              individuals, take on new challenges, and contribute to projects
-              that push the boundaries of what’s possible.
+    <div className="bg-white text-slate-900 min-h-screen">
+      {/* --- NARRATIVE SECTION --- */}
+      <section className="max-w-3xl mx-auto px-6 pt-24 pb-16">
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">
+          My Journey
+        </h2>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">
+          From High-Pressure Kitchens to{" "}
+          <span className="text-slate-500">Computer Science.</span>
+        </h1>
+
+        <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
+          <p>
+            Hi, I’m{" "}
+            <span className="text-slate-900 font-semibold">
+              Riccardo Barone
+            </span>
+            . My path to Computer Science wasn’t conventional. I spent years in
+            the hospitality industry, rising to the level of Junior Sous Chef.
+            That environment taught me the foundations of
+            <span className="text-slate-900">
+              {" "}
+              extreme discipline, leadership under pressure, and rapid
+              problem-solving
+            </span>
+            .
+          </p>
+          <p>
+            Now a final-year student, I’ve translated that work ethic into
+            technology. I view code and infrastructure through the same lens as
+            a high-end kitchen: every component must be precise, the workflow
+            must be optimized, and the final output must be reliable.
+          </p>
+          <p>
+            Whether it's volunteering in Bali with{" "}
+            <span className="italic font-medium text-slate-700">
+              Think Pacific
+            </span>{" "}
+            or designing secure networks, I thrive on challenges that force me
+            out of my comfort zone and require a strategic, analytical mindset.
+          </p>
+        </div>
+      </section>
+
+      {/* --- SKILLS GRID --- */}
+      <section className="bg-slate-50 py-24 border-y border-slate-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16 text-center lg:text-left">
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-2">
+              Expertise
+            </h2>
+            <p className="text-3xl font-medium text-slate-900">
+              Technical Competencies
             </p>
           </div>
-          <Image
-            src={AboutMe}
-            alt="AboutMe Picture"
-            className=" hidden xl:max-h-full overflow-hidden object-contain  md:w-auto md:h-[600px] xl:block"
-          ></Image>
-        </div>
 
-        <div className="flex flex-col justify-center mx-4 mb-20 lg:justify-start xl:w-11/12  ">
-          <h1 className="text-start w-full text-4xl mt-10  border-b-2 border-black xl:ml-10">
-            Skills & Expertise
-          </h1>
-          <h2 className="mt-4 my-2 text-md mx-auto text-center lg:text-start font-serif lg:ml-10">
-            Through my academic journey, I’ve developed a diverse skill set
-            across various technical domains:
-          </h2>
-          <ul className="mx-auto lg:mx-10 font-serif my-2">
-            {markdownLines.map((line, index) => (
-              <li key={index} className="my-2">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]} // For GitHub-flavored markdown support
-                  rehypePlugins={[rehypeRaw]} // To allow raw HTML rendering (for <span>)
-                >
-                  {line}
-                </ReactMarkdown>
-              </li>
+          <div className="flex flex-wrap justify-center gap-6">
+            {skillCategories.map((category, idx) => (
+              <div
+                key={idx}
+                className="p-8 bg-white border border-slate-200 rounded-xl hover:border-slate-600 transition-all duration-300 w-full md:w-80 flex-grow max-w-sm lg:max-w-none lg:flex-initial"
+              >
+                <h3 className="text-lg font-bold text-slate-900 mb-1">
+                  {category.title}
+                </h3>
+                <p className="text-[10px] text-slate-800  font-semibold uppercase tracking-widest mb-4 h-8 flex items-center">
+                  {category.description}
+                </p>
+                <ul className="space-y-2">
+                  {category.skills.map((skill, sIdx) => (
+                    <li
+                      key={sIdx}
+                      className="flex items-start text-sm text-slate-600"
+                    >
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 mr-2 shrink-0"></span>
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* --- FINAL CALL TO ACTION --- */}
+      <section className="max-w-3xl mx-auto px-6 py-24 text-center">
+        <h3 className="text-2xl font-bold text-slate-900 mb-4">
+          Let's build something secure.
+        </h3>
+        <p className="text-slate-600 mb-8">
+          I am looking to collaborate on projects that require a disciplined
+          approach to engineering and a security-first mindset.
+        </p>
+        <a
+          href="/contact"
+          className="inline-block px-8 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 transition-all"
+        >
+          Get in Touch
+        </a>
+      </section>
     </div>
   );
 }

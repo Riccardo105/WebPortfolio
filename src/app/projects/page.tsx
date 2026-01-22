@@ -1,21 +1,14 @@
 "use client";
-
-import React from "react";
-import Image, { StaticImageData } from "next/image";
-import { useEffect } from "react";
-
-import JavaOOP from "../../../public/images/JavaOOP.jpg";
-import Basketball from "../../../public/images/Basketball.jpg";
-import GiftWrapping from "../../../public/images/GiftWrapping.jpeg";
-import CraneAI from "../../../public/images/CraneAI.jpg";
-import NetworkSecurity from "../../../public/images/NewtworkSecurity.webp";
-import Portfolio from "../../../public/images/Portofolio.webp";
+import React, { useState, useEffect, Suspense } from "react";
+import { Projects } from "lib/assets";
+import { useSearchParams } from "next/navigation";
+import { ArrowLeft, ArrowRight, Github, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // data for projects page
-interface ProjectsProps {
+export interface ProjectsProps {
   id: number;
   title: string;
-  image: StaticImageData;
   overview: string;
   technologies: string;
   skillsLearnt: string;
@@ -25,180 +18,153 @@ interface ProjectsProps {
   fileName?: string; // name with which the file will be downloaded
 }
 
-const Projects: ProjectsProps[] = [
-  {
-    id: 1,
-    title: "Stock Management System",
-    image: JavaOOP,
-    overview:
-      "Developed a Stock Management System as part of my Object-Oriented Programming module. This was my first experience using Java and Object-Oriented Programming, building on concepts from earlier coding modules. The system followed modular architecture with design patterns such as DTO, DAO, and Service Layer. I also integrated Hibernate for ORM-based database interactions and hosted the database using Aiven for reliable cloud persistence.",
-    technologies: "Java, Hibernate (ORM), MySQL, Aiven, IntelliJ IDEA",
-    skillsLearnt:
-      "Object-Oriented Programming principlle, DTO-DAO design pattern, Service Layer design pattern, MVC architecture, ORM with Hibernate, Database hosting with Aiven, Modular software architecture",
-    isLinkable: true,
-    linkType: "github",
-    link: "https://github.com/Riccardo105/StockManagmentSystem",
-  },
+function ProjectShowcaseContent() {
+  const searchParams = useSearchParams();
+  const idFromUrl = searchParams.get("id"); // This gets "5" from ?id=5
 
-  {
-    id: 2,
-    title: "Web Portfolio",
-    image: Portfolio,
-    overview:
-      "This project is my personal web portfolio, a platform designed to introduce myself, showcase my skills, and present my projects in a professional and engaging manner. Visitors can explore my background, browse through my work, and download my resume directly from the site. Additionally, a dedicated contact section allows potential collaborators or employers to easily reach out to me. Building on the experience gained from previous projects, I focused on creating a modern, responsive, and user-friendly interface that reflects my growth as a developer. This portfolio serves as a central hub for my professional identity and accomplishments.",
-    technologies: "React, Next.js, TypeScript, TailwindCSS ",
-    skillsLearnt:
-      "Advanced front-end development, responsive design, TypeScript integration, performance optimization, modern web development practices",
-    isLinkable: true,
-    linkType: "github",
-    link: "https://github.com/Riccardo105/WebPortfolio",
-  },
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  {
-    id: 3,
-    title: "BasketBallLearningPlatform",
-    image: Basketball,
-    overview:
-      "The Basketball Learning Platform is a Progressive Web App (PWA) developed as part of my web development module. Designed as a training hub for basketball enthusiasts, it provides a variety of exercises to help users enhance their skills. Users can create personalized accounts to track completed exercises and monitor their progress over time. The app leverages server-side rendering (SSR) for improved performance and is integrated with a MongoDB database to ensure a seamless and dynamic user experience. As a PWA, it offers the added convenience of being installable on mobile devices, making it easily accessible for on-the-go training.",
-    technologies: "JavaScript, nodeJS, EJS, html, mongoDB, TailwindCSS",
-    skillsLearnt:
-      "Full-stack development, Progressive Web Apps, Database Management, API Development, MVC-pattern implementation, SSR (Server-Side Rendering), and user authentication",
-    isLinkable: true,
-    linkType: "github",
-    link: "https://github.com/Riccardo105/BasketballLearningPlatform",
-  },
-
-  {
-    id: 4,
-    title: "Crane AI",
-    image: CraneAI,
-    overview:
-      "This project was part of my AI and Machine Learning module, where I explored core concepts of artificial intelligence, including agents, environments, and search algorithms. I learned about designing AI systems using logical relations and transition models, particularly using PDDL (Planning Domain Definition Language). Additionally, the module introduced machine learning concepts. The project consisted of two parts: the first involved programming an AI agent to solve a crate-sorting problem, for which I implemented the A* algorithm. The second part focused on training a machine learning model using logistic regression on a provided dataset. This project deepened my understanding of AI problem-solving and machine learning techniques.",
-    technologies:
-      "Python, PDDL, A* algorithm, logistic regression, scikit-learn, and AI problem-solving frameworks",
-    skillsLearnt:
-      "AI problem-solving, search algorithms, logic-based AI design, machine learning model training, and data analysis using logistic regression",
-    isLinkable: true,
-    linkType: "github",
-    link: "https://github.com/Riccardo105/Artificial_Intelligence",
-  },
-  {
-    id: 5,
-    title: "Network Security",
-    image: NetworkSecurity,
-    overview:
-      "This project was part of my Network Security module, where we were given a specific network topology and tasked with applying the knowledge gained throughout the course to secure it. The focus of the project was on implementing a range of security measures, including basic device security, configuring access controls, and setting up secure communication through VPNs. I also explored several network security techniques, such as monitoring traffic and preventing unauthorized access, to ensure the integrity and safety of the network. Using Packet Tracer, I simulated and tested each configuration to ensure the network was both secure and functional, ensuring that all devices and communication links were protected according to industry-standard practices. This hands-on approach allowed me to gain practical experience in securing real-world network environments.",
-    technologies: "Packet tracer",
-    skillsLearnt:
-      "Network Security, AAA, site-to-site VPN, ACL, port security, Packet Tracer, local span and sniffer, L2 VLAN security",
-    isLinkable: false,
-  },
-  {
-    id: 6,
-    title: "GiftWrappingService",
-    image: GiftWrapping,
-    overview:
-      "This was my first-ever project for my software design and development module. While relatively simple, it played a crucial role in helping me get accustomed to coding. The project is a service where users can customize the wrapping of a gift by selecting options such as dimensions, wrapping paper color, and additional extras like cards or bows. The program calculates a quote based on the required amount of paper and any additional features. althoug a fairly simple, one-file project, it was an invaluable experience as my first step into programming.",
-    technologies: "Python, TKinter, UML,",
-    skillsLearnt:
-      " problem-solving, user interface creation, principles of Software design and development, UML modeling, wireframing",
-    isLinkable: true,
-    linkType: "github",
-    link: "https://github.com/Riccardo105/GiftWrappingService",
-  },
-];
-
-// set icon to buttons
-function getIconForProject(linkType: string) {
-  switch (linkType) {
-    case "github":
-      return "fa-brands fa-github";
-    case "download":
-      return "fa-solid fa-download";
-  }
-}
-
-export default function Page() {
+  // This effect runs whenever the URL ID changes
   useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const id = hash.replace("#", "");
-      console.log(id);
-      const element = document.getElementById(id);
-      console.log(element);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (idFromUrl) {
+      const parsedId = parseInt(idFromUrl);
+      const index = Projects.findIndex((p) => p.id === parsedId);
+
+      if (index !== -1) {
+        setCurrentIndex(index);
       }
     }
-  }, []);
+  }, [idFromUrl]); // Dependency array ensures it updates when the link is clicked
+
+  const nextProject = () =>
+    setCurrentIndex((prev) => (prev + 1) % Projects.length);
+  const prevProject = () =>
+    setCurrentIndex((prev) => (prev - 1 + Projects.length) % Projects.length);
+
+  const project = Projects[currentIndex];
+
+  // If data hasn't loaded or project is missing
+  if (!project) return null;
+
   return (
-    <div className="flex flex-col font-serif w-full xl:justify-center xl:w-11/12 ">
-      {Projects.map((project) => (
-        <div
-          key={project.id}
-          id={project.id.toString()}
-          className="flex flex-col items-start justify-center w-11/12 p-4 my-6 mx-auto xl:flex-row xl:items-center"
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col justify-between overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.main
+          key={currentIndex}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="max-w-5xl mx-auto px-6 pt-32 pb-12 flex-grow"
         >
-          <h2 className=" font-bold xl:hidden m-4 w-11/12 text-center text-xl ">
-            {project.title}
-          </h2>
-          <div className="flex xl:flex-1 justify-center items-center lg:mx-auto">
-            <Image
-              src={project.image}
-              alt={project.title}
-              className="lg:max-w-xl "
-            />
-          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Project Details */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-2">
+                  Project {project.id.toString().padStart(2, "0")}
+                </h2>
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+                  {project.title}
+                </h1>
+              </div>
 
-          <div className="flex xl:ml-10  xl:flex-1 flex-col">
-            <h2 className="text-2xl mb-4 font-bold justify-center text-center hidden xl:flex">
-              {project.title}
-            </h2>
-            <h1 className="font-bold my-2 border-black border-b-2 ">
-              Overview
-            </h1>
-            <p>{project.overview}</p>
+              <div className="space-y-4">
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  {project.overview}
+                </p>
+                <div className="pt-4 border-t border-slate-100">
+                  <p className="text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">
+                    Technologies
+                  </p>
+                  <p className="text-sm text-slate-700 font-medium">
+                    {project.technologies}
+                  </p>
+                </div>
+              </div>
 
-            <h1 className=" font-bold my-2 border-black border-b-2 w-1/2">
-              Technologies
-            </h1>
-            <p>{project.technologies}</p>
-            <h1 className=" font-bold my-2 border-black border-b-2 w-1/2">
-              Skills Learnt
-            </h1>
-            <p>{project.skillsLearnt}</p>
-            <div className="flex justify-center">
-              <a
-                href={project.link}
-                {...(project.isLinkable
-                  ? {
-                      className:
-                        "rounded-md border-2 border-black bg-white p-2 my-8 flex-row flex  w-fit items-center",
-                      // make button download if linkType is download
-                      ...(project.linkType === "download"
-                        ? { download: project.fileName || true }
-                        : {}),
+              {project.isLinkable && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition-all text-sm font-medium"
+                >
+                  {project.linkType === "github" ? (
+                    <Github size={18} />
+                  ) : (
+                    <ExternalLink size={18} />
+                  )}
+                  View Project
+                </a>
+              )}
+            </div>
 
-                      // make link open in new tab if linkType is github
-                      ...(project.linkType === "github"
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {}),
-                    }
-                  : { className: "hidden" })}
-              >
-                <i
-                  className={`mx-2 ${
-                    project.isLinkable && project.linkType
-                      ? getIconForProject(project.linkType)
-                      : ""
-                  }`}
-                ></i>
-                View Project
-              </a>
+            {/* Skills Learnt Box */}
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-slate-900 mb-6">
+                Technical Competencies
+              </h3>
+              <ul className="space-y-3">
+                {project.skillsLearnt.split(",").map((skill, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start text-sm text-slate-600"
+                  >
+                    <span className="text-slate-400 mr-2">•</span>
+                    {skill.trim()}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        </motion.main>
+      </AnimatePresence>
+
+      <footer className="pb-12 pt-6 border-t border-slate-50">
+        <div className="max-w-5xl mx-auto px-6 flex items-center justify-center gap-8">
+          <button
+            onClick={prevProject}
+            className="p-2 text-slate-400 hover:text-slate-900 transition-colors"
+          >
+            <ArrowLeft size={24} />
+          </button>
+
+          <div className="flex gap-3">
+            {Projects.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  currentIndex === idx
+                    ? "w-8 bg-slate-900"
+                    : "w-1.5 bg-slate-200"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextProject}
+            className="p-2 text-slate-400 hover:text-slate-900 transition-colors"
+          >
+            <ArrowRight size={24} />
+          </button>
         </div>
-      ))}
+      </footer>
     </div>
+  );
+}
+export default function ProjectShowcase() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
+      <ProjectShowcaseContent />
+    </Suspense>
   );
 }

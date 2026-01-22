@@ -8,22 +8,16 @@ export default function ContactMeForm() {
   >("idle");
   const [showResult, setShowResult] = useState(false);
 
-  // message colour setter
   const resultColor = {
-    idle: "text-black",
-    sending: "text-black",
-    success: "text-green-600",
+    idle: "text-slate-600",
+    sending: "text-slate-800 ",
+    success: "text-emerald-600",
     error: "text-red-600",
   }[status];
 
-  // timer for hiding the message
   useEffect(() => {
     if (showResult) {
-      const timer = setTimeout(() => {
-        setShowResult(false);
-      }, 5000);
-
-      // Clear the timer if the component unmounts or showResult changes
+      const timer = setTimeout(() => setShowResult(false), 5000);
       return () => clearTimeout(timer);
     }
   }, [showResult]);
@@ -40,67 +34,84 @@ export default function ContactMeForm() {
 
   const onSubmit = async (event: React.FormEvent<ContactForm>) => {
     event.preventDefault();
-    setResult("Sending...");
+    setResult("Sending your message...");
     setStatus("sending");
     setShowResult(true);
 
     const formData = new FormData(event.currentTarget);
     formData.append("access_key", "90c6e2f4-99c7-41e1-ac1d-1f057cc7baf7");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      setStatus("success");
-      (event.target as ContactForm).reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Message sent successfully!");
+        setStatus("success");
+        (event.target as ContactForm).reset();
+      } else {
+        setResult(data.message || "Something went wrong.");
+        setStatus("error");
+      }
+    } catch (e) {
+      setResult("System error. Please try again later.");
       setStatus("error");
     }
   };
 
   return (
-    <div className=" flex flex-col items-center justify-center ">
-      <form
-        onSubmit={onSubmit}
-        className=" w-full flex flex-col items-start justify-start "
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required
-          className=" w-full h-12 p-2 my-2 border-2 border-gray-300 text-black rounded-lg shadow-md xl:w-1/2"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          className=" w-full h-12 p-2 my-2 border-2 border-gray-300 text-black rounded-lg xl:w-1/2"
-        />
+    <div className="w-full flex flex-col items-center">
+      <form onSubmit={onSubmit} className="w-full space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400"
+          />
+        </div>
+
         <textarea
           name="message"
-          placeholder="Message"
+          placeholder="How can I help you?"
           required
-          className=" w-full h-32 p-2 my-2 border-2 border-gray-300 text-black rounded-lg"
+          rows={5}
+          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-slate-900 placeholder:text-slate-400 resize-none"
         ></textarea>
-        <button
-          type="submit"
-          className=" w-full h-12 p-2 my-2 bg-white border-black border-2 rounded-lg"
-        >
-          Submit
-        </button>
+
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="w-2/3 md:w-auto px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg transition-all duration-200 disabled:bg-slate-400 disabled:cursor-not-allowed text-sm md:text-base"
+          >
+            {status === "sending" ? "Sending..." : "Send Message"}
+          </button>
+        </div>
       </form>
-      {showResult && (
-        <span className={`w-fit mt-2 ${resultColor}`}>{result}</span>
-      )}
+
+      {/* Result Message Container */}
+      <div className="h-8 mt-2 text-center">
+        {showResult && (
+          <p
+            className={`text-sm font-medium transition-all duration-300 ${resultColor}`}
+          >
+            {result}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
