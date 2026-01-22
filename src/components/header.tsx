@@ -101,7 +101,7 @@ export default function Header() {
             </button>
           </div>
 
-          <div className="flex flex-col h-full items-center justify-between">
+          <div className="flex flex-col h-full text-center items-center justify-between">
             <MenuItems styling="flex flex-col gap-8 text-lg  mt-10 text-slate-600" />
 
             <div className="pb-12 border-t border-slate-100 pt-8">
