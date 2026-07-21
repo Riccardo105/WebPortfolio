@@ -98,10 +98,11 @@ export default function AboutPage() {
             .
           </p>
           <p>
-            Now a final-year student, I’ve translated that work ethic into
-            technology. I view code and infrastructure through the same lens as
-            a high-end kitchen: every component must be precise, the workflow
-            must be optimized, and the final output must be reliable.
+            Having graduated with First Class Honours, I’ve translated that work
+            ethic into technology. I view code and infrastructure through the
+            same lens as a high-end kitchen: every component must be precise,
+            the workflow must be optimized, and the final output must be
+            reliable.
           </p>
           <p>
             Whether it's volunteering in Bali with{" "}

@@ -15,9 +15,9 @@ export default function Home() {
           Hey, I’m Riccardo.
         </h1>
         <p className="text-xl md:text-2xl text-slate-500 max-w-2xl leading-relaxed">
-          I am a final-year Computer Science student aspiring to a career in the
-          technology sector, with a focus on building and securing the reliable
-          systems of tomorrow
+          I am a Computer Science Graduate (First Class Hons) aspiring to a
+          career in the technology sector, with a focus on building and securing
+          the reliable systems of tomorrow.
         </p>
 
         <a
@@ -55,9 +55,9 @@ export default function Home() {
           </div>
           <div className="md:col-span-2">
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              I am a final-year Computer Science student at the University of
-              Wincehster with a mature, strategic approach to software
-              engineering and a professional background in managing
+              I am a Computer Science Graduate (First Class Hons) from the
+              University of Winchester with a mature, strategic approach to
+              software engineering and a professional background in managing
               high-pressure environments. I am driven by a commitment to
               building secure, reliable, and inclusive systems that address
               complex technical challenges with ethical integrity.
